@@ -1,0 +1,94 @@
+<aside class="doc_left_sidebarlist credit-text-container container">
+    <h2 class="doc-title">
+        Quick Search
+    </h2>
+    <section class="quick-search">
+        <div class="form-wrapper">
+            <input type="text" name="qsearch" placeholder="Filter by Category" id="qsearch" />
+        </div>
+        <ul class="nav-sidebar left-sidebar-results px-3">
+            <f:if condition="{categories}">
+                <f:then>
+                    <f:for each="{categories}" as="cat" iteration="i">
+                        <f:variable name="activeClass">
+                            <f:format.raw>
+                                <f:if condition="{cat.active}">active</f:if>
+                            </f:format.raw>
+                        </f:variable>
+                        <li class="nav-item {activeClass}">
+                            <div class="doc-link parent_link d-flex flex-row justify-content-between pt-3 pb-2">
+                                <a href="{cat.url}" class="item doc-link cat-link">
+                                    <span class="icon-wrapper">
+                                        <img src="{f:uri.resource(path: 'Images/folder-open.png', extensionName: 'insights')}"
+                                            class="folder_icon folder_open" alt="open">
+                                        <img src="{f:uri.resource(path: 'Images/folder-closed.png', extensionName: 'insights')}"
+                                            class="folder_icon folder_close" alt="close">
+                                    </span>
+                                    {cat.title}
+                                </a>
+                                <div class="dropdown_icon flex-end ps-4">
+                                    <i class="ki-duotone ki-down arrow_carrot-down"></i>
+                                    <i class="ki-duotone ki-up arrow_carrot-up d-none"></i>
+                                </div>
+                            </div>
+                            <f:if condition="{cat.childs}">
+                                <div class="dropdown_nav">
+                                    <f:if condition="{cat.childs}">
+                                        <ul class="nav-sidebar child-nav d-none">
+                                            <f:for each="{cat.childs}" as="subcat">
+                                                <f:variable name="activeClass">
+                                                    <f:format.raw>
+                                                        <f:if condition="{subcat.active}">active</f:if>
+                                                    </f:format.raw>
+                                                </f:variable>
+                                                <li class="nav-item {activeClass}">
+                                                    <div class="d-flex flex-row justify-content-between">
+                                                        <a href="{subcat.url}" data-uid="{subcat.uid}"
+                                                            class="sub-folder cat-link {activeClass}">
+                                                            <span class="icon-wrapper">
+                                                                <img src="{f:uri.resource(path: 'Images/folder-open.png', extensionName: 'insights')}"
+                                                                    class="folder_icon folder_open" alt="open">
+                                                                <img src="{f:uri.resource(path: 'Images/folder-closed.png', extensionName: 'insights')}"
+                                                                    class="folder_icon folder_close" alt="close">
+                                                            </span>
+                                                            {subcat.title}
+                                                        </a>
+                                                        <f:if condition="{subcat.childs} || {subcat.posts}">
+                                                            <div class="dropdown_icon flex-end ps-4">
+                                                                <i class="ki-duotone ki-down arrow_carrot-down"></i>
+                                                                <i class="ki-duotone ki-up arrow_carrot-up d-none"></i>
+                                                            </div>
+                                                        </f:if>
+                                                    </div>
+                                                    <f:if condition="{subcat.posts}">
+                                                        <div class="dropdown_nav posts-navbar d-none">
+                                                            <div class="posts-list ps-3">
+                                                                <f:for each="{subcat.posts}" as="post">
+                                                                    <a href="{post.url}"
+                                                                        class="item doc-link post-link {post.uid == uid ? 'active' : ''} d-block py-1    ">
+                                                                        <i class="ki-duotone ki-notepad pe-1"></i>
+                                                                        {post.title}
+                                                                    </a>
+                                                                </f:for>
+                                                            </div>
+                                                        </div>
+                                                    </f:if>
+                                                </li>
+                                            </f:for>
+                                        </ul>
+                                    </f:if>
+                                </div>
+                            </f:if>
+                        </li>
+                    </f:for>
+                </f:then>
+                <f:else>
+                    <p class="card-text">N0 Items Found !! </p>
+                </f:else>
+            </f:if>
+        </ul>
+        <p class="no-results nav-sidebar left-sidebar-results px-3" style="display:none;">
+            No Results Found !!
+        </p>
+    </section>
+</aside>

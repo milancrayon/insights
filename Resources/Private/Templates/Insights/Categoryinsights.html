@@ -1,0 +1,87 @@
+<section class="category-insights-view py-5 bg-white overflow-hidden">
+    <div class="container custom_container">
+
+        <f:if condition="{activeCategory}">
+            <div class="category-header mb-10 wow animate__fadeIn">
+                <h1 class="document_title">{activeCategory.title}</h1>
+
+                <f:if condition="{activeCategory.description}">
+                    <blockquote class="media notice notice-warning mt-4">
+                        <i class="icon_ribbon_alt"></i>
+                        <div class="media-body">
+                            {activeCategory.description -> f:format.html()}
+                        </div>
+                    </blockquote>
+                </f:if>
+            </div>
+        </f:if>
+
+        <div class="tree-content-wrapper mt-5">
+            <f:if condition="{categoryTree}">
+                <f:then>
+                    <div class="category-tree-root">
+                        <f:render section="TreeItem" arguments="{node: categoryTree, isRoot: 1}" />
+                    </div>
+                </f:then>
+                <f:else>
+                    <div class="card bg-light border-0 rounded-4 p-10 text-center shadow-xs">
+                        <div class="symbol symbol-100px symbol-circle bg-white mb-5 mx-auto shadow-sm">
+                            <div class="symbol-label">
+                                <i class="ki-duotone ki-file-slash fs-3x text-gray-400"></i>
+                            </div>
+                        </div>
+                        <h3 class="fw-bold text-gray-800 mb-2">No Items Found</h3>
+                        <p class="text-gray-500 mb-0">This category doesn't have any posts or subcategories yet.</p>
+                    </div>
+                </f:else>
+            </f:if>
+        </div>
+    </div>
+</section>
+<f:section name="TreeItem">
+    <div class="tree-node doc_tag_item wow fadeInUp {f:if(condition: isRoot, else: 'col-12')}" style="visibility: visible; animation-name: fadeInUp;">
+        <f:if condition="{isRoot}">
+            <f:else>
+                <div class="doc_tag_title">
+                    <h4>{node.title}</h4>
+                    <div class="line"></div>
+                </div>
+                <f:if condition="{node.description}">
+                    <div class="text-muted mb-4 ps-1 border-start border-2 ms-4">
+                        {node.description -> f:format.raw()}
+                    </div>
+                </f:if>
+            </f:else>
+        </f:if>
+
+        <f:if condition="{isRoot} && {f:count(subject: node.childs)} > 0">
+            <f:else>
+                <f:if condition="{node.posts}">
+                    <f:then>
+                        <ul class="list-unstyled tag_list {f:if(condition: isRoot, then: 'ps-2')}">
+                            <f:for each="{node.posts}" as="post">
+                                <li>
+                                    <a href="{post.url}">
+                                        <i class="ki-duotone ki-notepad"></i> 
+                                         {post.title}
+                                    </a>
+                                </li>
+                            </f:for>
+                        </ul>
+                    </f:then>
+                </f:if>
+            </f:else>
+        </f:if>
+
+
+        <f:if condition="{node.childs}">
+            <div
+                class="child-categories-container {f:if(condition: isRoot, else: 'ms-2 border-start border-light')}">
+                <f:for each="{node.childs}" as="child">
+                    <f:render section="TreeItem" arguments="{node: child, isRoot: 0}" />
+
+                </f:for>
+            </div>
+        </f:if>
+    </div>
+</f:section>

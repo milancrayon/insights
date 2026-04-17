@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64">
+  <!-- Background -->
+  <rect x="4" y="4" width="56" height="56" rx="10" fill="#D35400"></rect>
+  <!-- Tag shape -->
+  <path d="M20 18h14l14 14-14 14-14-14z" fill="white"></path>
+  <!-- Hole -->
+  <circle cx="30" cy="24" r="2.6" fill="#D35400"></circle>
+</svg>

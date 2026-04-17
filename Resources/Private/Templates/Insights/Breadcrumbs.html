@@ -1,0 +1,90 @@
+<section class="page_breadcrumb">
+    <div class="container custom_container">
+        <div class="row">
+            <div class="col-sm-5">
+                <f:if condition="{settings.showbreadcrumbs} == '1'">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item">
+                                <f:link.page pageUid="{homePageId}">
+                                    Home
+                                </f:link.page>
+                            </li> 
+                            <f:if condition="{categoryBreadcrumbs}">
+                                <f:for each="{categoryBreadcrumbs}" as="breadcrumb" iteration="i">
+                                    <li class="breadcrumb-item {f:if(condition: i.isLast, then: 'active')}"> 
+                                        <a href="{breadcrumb.url}">
+                                            {breadcrumb.title}
+                                        </a>
+                                    </li>
+                                </f:for>
+                            </f:if>
+                            <li class="breadcrumb-item active" aria-current="page">{item.title}</li>
+                        </ol>
+                    </nav>
+                </f:if>
+            </div>
+            <div class="col-sm-7 d-flex flex-row flex-wrap justify-content-end align-content-end align-items-end gap-3">
+                <f:if condition="{settings.showviewers} == '1'">
+                    <div class="viewers">
+                        <i class="ki-duotone ki-eye fs-6"></i>
+                        <span>{item.viewers} views</span>
+                    </div>
+                </f:if>
+                <f:if condition="{settings.readtime} == '1'">
+                    <div class="read_time text-secondary align-items-center">
+                        <i class="ki-duotone ki-time fs-6"></i>
+                        <span>
+                            <span hidden>__readtime__</span> Min
+                            read
+                        </span>
+                    </div>
+                </f:if>
+                <f:if condition="{settings.showlikedislike} == '1'">
+                    <div
+                        class="d-flex flex-row flex-wrap justify-content-center align-content-center align-items-center gap-1">
+                        <div class="like_sec">
+                            <f:form action="like" controller="Insights" pluginName="PostDetail" method="post"
+                                extensionName="Insights" pageUid="{settings.detailPid}">
+                                <f:form.hidden name="uid" value="{item.uid}" />
+                                <span class="likes">{likes}</span>
+                                <button type="submit" class="btn p-0 m-0">
+                                    <f:if condition="{isliked}">
+                                        <f:then>
+                                            <i class="ki-duotone ki-like fs-5 text-primary"></i>
+                                        </f:then>
+                                        <f:else>
+                                            <i class="ki-duotone ki-like fs-5 text-secondary"></i>
+                                        </f:else>
+                                    </f:if>
+                                </button>
+                            </f:form>
+                        </div>
+                        <div class="dislike_sec">
+                            <f:form action="dislike" controller="Insights" pluginName="PostDetail" method="post"
+                                extensionName="Insights" pageUid="{settings.detailPid}">
+                                <f:form.hidden name="uid" value="{item.uid}" />
+                                <span class="dislikes">{dislikes}</span>
+                                <button type="submit" class="btn p-0 m-0">
+                                    <f:if condition="{isdisliked}">
+                                        <f:then>
+                                            <i class="ki-duotone ki-dislike fs-5 text-danger"></i>
+                                        </f:then>
+                                        <f:else>
+                                            <i class="ki-duotone ki-dislike fs-5 text-secondary"></i>
+                                        </f:else>
+                                    </f:if>
+                                </button>
+                            </f:form>
+                        </div>
+                    </div>
+                </f:if>
+                <f:if condition="{settings.showpublishdate} == '1'">
+                    <span class="date">
+                        <i class="icon_clock_alt"></i>Updated on <f:format.date>{item.publishdate}</f:format.date>
+                    </span>
+                </f:if>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<xliff version="1.0">
+    <file source-language="en" datatype="plaintext" date="2023-02-25T07:50:45Z"
+        product-name="insights">
+        <body>
+            <trans-unit id="storePid" resname="storePid">
+                <source>Record Stored Page</source>
+            </trans-unit>
+            <trans-unit id="insights-config" resname="insights-config">
+                <source>Insight Options</source>
+            </trans-unit>
+            <trans-unit id="pageSize" resname="pageSize">
+                <source>Records Per Page</source>
+            </trans-unit>
+            <trans-unit id="selectedItems" resname="selectedItems">
+                <source>Select Items</source>
+            </trans-unit>
+            <trans-unit id="detailPid" resname="detailPid">
+                <source>Detail Page</source>
+            </trans-unit>
+            <trans-unit id="orderBy" resname="orderBy">
+                <source>Order By</source>
+            </trans-unit>
+            <trans-unit id="modify" resname="modify">
+                <source>Updated Date</source>
+            </trans-unit>
+            <trans-unit id="created" resname="created">
+                <source>Created Date</source>
+            </trans-unit>
+            <trans-unit id="orderDir" resname="orderDir">
+                <source>Order Direction</source>
+            </trans-unit>
+            <trans-unit id="desc" resname="desc">
+                <source>Descending</source>
+            </trans-unit>
+            <trans-unit id="asc" resname="asc">
+                <source>Ascending</source>
+            </trans-unit>
+            <trans-unit id="listPid" resname="listPid">
+                <source>List Page</source>
+            </trans-unit>
+            <trans-unit id="reset" resname="reset">
+                <source>Reset</source>
+            </trans-unit>
+            <trans-unit id="backTitle" resname="backTitle">
+                <source>Back Button Label</source>
+            </trans-unit>
+            <trans-unit id="filterResultPid" resname="filterResultPid">
+                <source>Filter Result Page Id</source>
+            </trans-unit>
+            <trans-unit id="filter" resname="filter">
+                <source>Filter</source>
+            </trans-unit>
+            <trans-unit id="submit" resname="submit">
+                <source>Submit</source>
+            </trans-unit>
+            <trans-unit id="insights" resname="insights">
+                <source>Insights</source>
+            </trans-unit>
+            <trans-unit id="thankPid" resname="thankPid">
+                <source>Thank You Page</source>
+            </trans-unit>
+            <trans-unit id="table_author" resname="table_author">
+                <source>Author</source>
+            </trans-unit>
+            <trans-unit id="author_name" resname="author_name">
+                <source>Name</source>
+            </trans-unit>
+            <trans-unit id="author_email" resname="author_email">
+                <source>Email</source>
+            </trans-unit>
+            <trans-unit id="author_avtar" resname="author_avtar">
+                <source>Avtar</source>
+            </trans-unit>
+            <trans-unit id="author_slug" resname="author_slug">
+                <source>Slug</source>
+            </trans-unit>
+            <trans-unit id="table_tags" resname="table_tags">
+                <source>Tags</source>
+            </trans-unit>
+            <trans-unit id="tags_title" resname="tags_title">
+                <source>Title</source>
+            </trans-unit>
+            <trans-unit id="tags_slug" resname="tags_slug">
+                <source>Slug</source>
+            </trans-unit>
+            <trans-unit id="tags_description" resname="tags_description">
+                <source>Description</source>
+            </trans-unit>
+            <trans-unit id="table_post" resname="table_post">
+                <source>News</source>
+            </trans-unit>
+            <trans-unit id="news_Setting" resname="news_Setting">
+                <source>News Settings</source>
+            </trans-unit>
+            <trans-unit id="add_new" resname="add_new">
+                <source>Add New</source>
+            </trans-unit>
+            <trans-unit id="social_media" resname="social_media">
+                <source>Social Media</source>
+            </trans-unit>
+            <trans-unit id="save" resname="save">
+                <source>Save</source>
+            </trans-unit>
+            <trans-unit id="post_title" resname="post_title">
+                <source>Title</source>
+            </trans-unit>
+            <trans-unit id="post_slug" resname="post_slug">
+                <source>Slug</source>
+            </trans-unit>
+            <trans-unit id="post_alternativetitle" resname="post_alternativetitle">
+                <source>Alternative Title</source>
+            </trans-unit>
+            <trans-unit id="post_metakeyword" resname="post_metakeyword">
+                <source>Meta Keyword</source>
+            </trans-unit>
+            <trans-unit id="post_metadescription" resname="post_metadescription">
+                <source>Meta Description</source>
+            </trans-unit>
+            <trans-unit id="post_teaser" resname="post_teaser">
+                <source>Teaser</source>
+            </trans-unit>
+            <trans-unit id="post_description" resname="post_description">
+                <source>Description</source>
+            </trans-unit>
+            <trans-unit id="post_publishdate" resname="post_publishdate">
+                <source>Publish Date</source>
+            </trans-unit>
+            <trans-unit id="post_archivedate" resname="post_archivedate">
+                <source>Archive Date</source>
+            </trans-unit>
+            <trans-unit id="post_thumbnail" resname="post_thumbnail">
+                <source>Thumbnail</source>
+            </trans-unit>
+            <trans-unit id="post_category" resname="post_category">
+                <source>Category</source>
+            </trans-unit>
+            <trans-unit id="post_timetoread" resname="post_timetoread">
+                <source>Time to read</source>
+            </trans-unit>
+            <trans-unit id="post_viewers" resname="post_viewers">
+                <source>Viewers</source>
+            </trans-unit>
+            <trans-unit id="post_author" resname="post_author">
+                <source>Author</source>
+            </trans-unit>
+            <trans-unit id="post_tags" resname="post_tags">
+                <source>Tags</source>
+            </trans-unit>
+            <trans-unit id="post_relatedfiles" resname="post_relatedfiles">
+                <source>Related files</source>
+            </trans-unit>
+            <trans-unit id="post_previouspost" resname="post_previouspost">
+                <source>Previous News</source>
+            </trans-unit>
+            <trans-unit id="post_nextpost" resname="post_nextpost">
+                <source>Next News</source>
+            </trans-unit>
+            <trans-unit id="post_relatedposts" resname="post_relatedposts">
+                <source>Related posts</source>
+            </trans-unit>
+            <trans-unit id="post_content" resname="post_content">
+                <source>Content</source>
+            </trans-unit>
+            <trans-unit id="table_likes" resname="table_likes">
+                <source>Likes</source>
+            </trans-unit>
+            <trans-unit id="likes_ipaddress" resname="likes_ipaddress">
+                <source>Ip Address</source>
+            </trans-unit>
+            <trans-unit id="likes_browser" resname="likes_browser">
+                <source>browser</source>
+            </trans-unit>
+            <trans-unit id="table_comments" resname="table_comments">
+                <source>Comments</source>
+            </trans-unit>
+            <trans-unit id="comments_name" resname="comments_name">
+                <source>Name</source>
+            </trans-unit>
+            <trans-unit id="comments_email" resname="comments_email">
+                <source>Email</source>
+            </trans-unit>
+            <trans-unit id="comments_comment" resname="comments_comment">
+                <source>Comment</source>
+            </trans-unit>
+            <trans-unit id="comments_post" resname="comments_post">
+                <source>News</source>
+            </trans-unit>
+            <trans-unit id="comments_parentcomment" resname="comments_parentcomment">
+                <source>Parent Comment</source>
+            </trans-unit>
+            <trans-unit id="comments_status" resname="comments_status">
+                <source>Status</source>
+            </trans-unit>
+            <trans-unit id="comments_status_pending" resname="comments_status_pending">
+                <source>Pending</source>
+            </trans-unit>
+            <trans-unit id="comments_status_approved" resname="comments_status_approved">
+                <source>Approved</source>
+            </trans-unit>
+            <trans-unit id="comments_status_declined" resname="comments_status_declined">
+                <source>Declined</source>
+            </trans-unit>
+            <trans-unit id="postlist_title" resname="postlist_title">
+                <source>News List</source>
+            </trans-unit>
+            <trans-unit id="postlist_desc" resname="postlist_desc">
+                <source>News List</source>
+            </trans-unit>
+            <trans-unit id="tags_title" resname="tags_title">
+                <source>Tags</source>
+            </trans-unit>
+            <trans-unit id="tags_desc" resname="tags_desc">
+                <source>Tag List</source>
+            </trans-unit>
+            <trans-unit id="postdetail_title" resname="postdetail_title">
+                <source>News Detail</source>
+            </trans-unit>
+            <trans-unit id="postdetail_desc" resname="postdetail_desc">
+                <source>News Detail</source>
+            </trans-unit>
+            <trans-unit id="commentform_title" resname="commentform_title">
+                <source>Comment Form</source>
+            </trans-unit>
+            <trans-unit id="insightviews" resname="insightviews">
+                <source>Show in view</source>
+            </trans-unit>
+            <trans-unit id="commentform_desc" resname="commentform_desc">
+                <source>Comment Form</source>
+            </trans-unit>
+            <trans-unit id="postfilter_title" resname="postfilter_title">
+                <source>News Filter</source>
+            </trans-unit>
+            <trans-unit id="postfilter_desc" resname="postfilter_desc">
+                <source>FIlter option for News</source>
+            </trans-unit>
+            <trans-unit id="insights_tab_title" resname="insights_tab_title">
+                <source>Insights</source>
+            </trans-unit>
+            <trans-unit id="filterresultlist_title" resname="filterresultlist_title">
+                <source>News filter result</source>
+            </trans-unit>
+            <trans-unit id="filterresultlist_desc" resname="filterresultlist_desc">
+                <source>News filter result</source>
+            </trans-unit>
+            <trans-unit id="sm_option" resname="sm_option">
+                <source>Social Media Options</source>
+            </trans-unit>
+            <trans-unit id="title" resname="title">
+                <source>Title</source>
+            </trans-unit>
+            <trans-unit id="icon" resname="icon">
+                <source>Icon</source>
+            </trans-unit>
+            <trans-unit id="link" resname="link">
+                <source>Link</source>
+            </trans-unit>
+            <trans-unit id="template_option" resname="template_option">
+                <source>Article Templates</source>
+            </trans-unit>
+            <trans-unit id="basic_option" resname="basic_option">
+                <source>Configurations</source>
+            </trans-unit>
+            <trans-unit id="comments_show_fe" resname="comments_show_fe">
+                <source>Approved Only</source>
+            </trans-unit>
+            <trans-unit id="allcomments" resname="allcomments">
+                <source>All Comments / Approved Only</source>
+            </trans-unit>
+            <trans-unit id="select" resname="select">
+                <source>Select</source>
+            </trans-unit>
+            <trans-unit id="table_details" resname="table_details">
+                <source>Details</source>
+            </trans-unit>
+            <trans-unit id="insights_menu" resname="insights_menu">
+                <source>News Insight</source>
+            </trans-unit>
+            <trans-unit id="insights_news" resname="insights_news">
+                <source>News List</source>
+            </trans-unit>
+            <trans-unit id="insights_comments" resname="insights_comments">
+                <source>Comments</source>
+            </trans-unit>
+            <trans-unit id="comment" resname="comment">
+                <source>Comment</source>
+            </trans-unit>
+            <trans-unit id="insights_likes" resname="insights_likes">
+                <source>Likes</source>
+            </trans-unit>
+            <trans-unit id="insights_tags" resname="insights_tags">
+                <source>Manage Tags</source>
+            </trans-unit>
+            <trans-unit id="insights_authors" resname="insights_authors">
+                <source>Authors</source>
+            </trans-unit>
+            <trans-unit id="table_viewers" resname="table_viewers">
+                <source>Viewers</source>
+            </trans-unit>
+            <trans-unit id="table_config" resname="table_config">
+                <source>Insight Option</source>
+            </trans-unit>
+            <trans-unit id="insights_newsadd" resname="insights_newsadd">
+                <source>Add New News</source>
+            </trans-unit>
+            <trans-unit id="storageid" resname="storageid">
+                <source>Storage for News</source>
+            </trans-unit>
+            <trans-unit id="displaycomment" resname="displaycomment">
+                <source>Show Comments</source>
+            </trans-unit>
+            <trans-unit id="nextprvbtn" resname="nextprvbtn">
+                <source>Show Next Previous Button ?</source>
+            </trans-unit>
+            <trans-unit id="socialshare" resname="socialshare">
+                <source>Social Share ?</source>
+            </trans-unit>
+            <trans-unit id="addcomments" resname="addcomments">
+                <source>Allow Comments</source>
+            </trans-unit>
+            <trans-unit id="displayauthor" resname="displayauthor">
+                <source>Display Author?</source>
+            </trans-unit>
+            <trans-unit id="author_designation" resname="author_designation">
+                <source>designation</source>
+            </trans-unit>
+            <trans-unit id="author_intro" resname="author_intro">
+                <source>intro</source>
+            </trans-unit>
+            <trans-unit id="author_socialmedia" resname="author_socialmedia">
+                <source>socialmedia</source>
+            </trans-unit>
+            <trans-unit id="socialmedia" resname="socialmedia">
+                <source>Social Media</source>
+            </trans-unit>
+            <trans-unit id="table_author_socialmedia" resname="table_author_socialmedia">
+                <source>socialmedia</source>
+            </trans-unit>
+            <trans-unit id="author_socialmedia_f17654463090"
+                resname="author_socialmedia_f17654463090">
+                <source>Url</source>
+            </trans-unit>
+            <trans-unit id="author_socialmedia_f17654463231"
+                resname="author_socialmedia_f17654463231">
+                <source>icon</source>
+            </trans-unit>
+            <trans-unit id="poststatus" resname="poststatus">
+                <source>Publish</source>
+            </trans-unit>
+            <trans-unit id="post_list" resname="post_list">
+                <source>News List</source>
+            </trans-unit>
+            <trans-unit id="post_detail" resname="post_detail">
+                <source>News detail</source>
+            </trans-unit>
+            <trans-unit id="comment_form" resname="comment_form">
+                <source> Comment Form</source>
+            </trans-unit>
+            <trans-unit id="beconfig_tags" resname="beconfig_tags">
+                <source>Tags</source>
+            </trans-unit>
+            <trans-unit id="post_flters" resname="post_flters">
+                <source>News Filter</source>
+            </trans-unit>
+            <trans-unit id="post_flters_submit" resname="post_flters_submit">
+                <source> News Filter Submit</source>
+            </trans-unit>
+            <trans-unit id="filter_Result_list" resname="filter_Result_list">
+                <source>Filter Result List</source>
+            </trans-unit>
+            <trans-unit id="comment_form_submit" resname="comment_form_submit">
+                <source>Comment Form Submit</source>
+            </trans-unit>
+            <trans-unit id="news_option" resname="news_option">
+                <source>News Options</source>
+            </trans-unit>
+            <trans-unit id="comment_option" resname="comment_option">
+                <source>Comment Options</source>
+            </trans-unit>
+            <trans-unit id="post_search" resname="post_search">
+                <source>Search</source>
+            </trans-unit>
+            <trans-unit id="insightviews.0" resname="insightviews.0">
+                <source>Show only in detail views</source>
+            </trans-unit>
+            <trans-unit id="insightviews.1" resname="insightviews.1">
+                <source>Show in all views</source>
+            </trans-unit>
+            <trans-unit id="insightviews.2" resname="insightviews.2">
+                <source>Show only in list views</source>
+            </trans-unit>
+            <trans-unit id="clang" resname="clang">
+                <source>Comment Language</source>
+            </trans-unit>
+            <trans-unit id="langwisecomment" resname="langwisecomment">
+                <source>Language wise comments</source>
+            </trans-unit>
+            <trans-unit id="breadcrumbs_title" resname="breadcrumbs_title">
+                <source>Breadcrumbs</source>
+            </trans-unit>
+            <trans-unit id="breadcrumbs_desc" resname="breadcrumbs_desc">
+                <source>Breadcrumbs of insight detail</source>
+            </trans-unit>
+            <trans-unit id="showBreadcrumbs" resname="showBreadcrumbs">
+                <source>Show Breadcrumbs?</source>
+            </trans-unit>
+            <trans-unit id="showpublishdate" resname="showpublishdate">
+                <source>Show Publish date?</source>
+            </trans-unit>
+            <trans-unit id="showviewers" resname="showviewers">
+                <source>Show Viewers?</source>
+            </trans-unit>
+            <trans-unit id="showlikedislike" resname="showlikedislike">
+                <source>Show Likes/Dislike button?</source>
+            </trans-unit>
+            <trans-unit id="readtime" resname="readtime">
+                <source>Show Readtime?</source>
+            </trans-unit>
+            <trans-unit id="quicksearch_title" resname="quicksearch_title">
+                <source>Quick Search insights</source>
+            </trans-unit>
+            <trans-unit id="quicksearch" resname="quicksearch">
+                <source>Quick Search</source>
+            </trans-unit>
+            <trans-unit id="quicksearch_desc" resname="quicksearch_desc">
+                <source>Quick Search of insights with in insights list</source>
+            </trans-unit>
+            <trans-unit id="insightelements_title" resname="insightelements_title">
+                <source>Insight's Element list</source>
+            </trans-unit>
+            <trans-unit id="insightelements_desc" resname="insightelements_desc">
+                <source>List of insights elements</source>
+            </trans-unit>
+            <trans-unit id="recommended" resname="recommended">
+                <source>Recommended</source>
+            </trans-unit>
+            <trans-unit id="recommended_title" resname="recommended_title">
+                <source>Recommended</source>
+            </trans-unit>
+            <trans-unit id="recommended_desc" resname="recommended_desc">
+                <source>Recommended post list</source>
+            </trans-unit>
+            <trans-unit id="maxpost" resname="maxpost">
+                <source>Number of Recommended Post</source>
+            </trans-unit>
+            <trans-unit id="postschema" resname="postschema">
+                <source>Schema</source>
+            </trans-unit>
+            <trans-unit id="ai_option" resname="ai_option">
+                <source>AI Configuration</source>
+            </trans-unit>
+            <trans-unit id="aioptions" resname="aioptions">
+                <source>AI Options</source>
+            </trans-unit>
+            <trans-unit id="agent" resname="agent">
+                <source>Agent</source>
+            </trans-unit>
+            <trans-unit id="apikey" resname="apikey">
+                <source>API key</source>
+            </trans-unit>
+            <trans-unit id="active" resname="active">
+                <source>Active</source>
+            </trans-unit>
+            <trans-unit id="categoryinsights_title" resname="categoryinsights_title">
+                <source>Category wise Insights</source>
+            </trans-unit>
+            <trans-unit id="category_insights" resname="category_insights">
+                <source>Category wise Insights</source>
+            </trans-unit>
+            <trans-unit id="categoryinsights_desc" resname="categoryinsights_desc">
+                <source>Category wise list of Insights</source>
+            </trans-unit>
+            <trans-unit id="categorylist_title" resname="categorylist_title">
+                <source>Category List</source>
+            </trans-unit>
+            <trans-unit id="categorylist_desc" resname="categorylist_desc">
+                <source>Selected Category List with Category DEtail page</source>
+            </trans-unit>
+            <trans-unit id="searchpopular_title" resname="searchpopular_title">
+                <source>Search and Popular Widget</source>
+            </trans-unit>
+            <trans-unit id="searchpopular_desc" resname="searchpopular_desc">
+                <source>Search Insight and Popular Insight by Ajax</source>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

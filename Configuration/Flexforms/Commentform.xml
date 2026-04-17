@@ -1,0 +1,34 @@
+<T3DataStructure>
+    <sheets>
+        <sDEF>
+            <ROOT>
+                <sheetTitle> General </sheetTitle>
+                <type>array</type>
+                <el>
+                    <settings.storePid> 
+                        <label>LLL:EXT:insights/Resources/Private/Language/locallang.xlf:storePid</label>
+                        <config>
+                            <type>group</type>
+                            <allowed>pages</allowed>
+                            <size>1</size>
+                            <required>1</required>
+                            <maxitems>1</maxitems>
+                            <minitems>1</minitems>
+                        </config> 
+                    </settings.storePid>
+                    <settings.thankPid> 
+                        <label>LLL:EXT:insights/Resources/Private/Language/locallang.xlf:thankPid</label>
+                        <config>
+                            <type>group</type>
+                            <allowed>pages</allowed>
+                            <size>1</size>
+                            <required>1</required>
+                            <maxitems>1</maxitems>
+                            <minitems>1</minitems>
+                        </config> 
+                    </settings.thankPid>
+                </el>
+            </ROOT>
+        </sDEF>
+    </sheets>
+</T3DataStructure>

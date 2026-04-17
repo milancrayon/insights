@@ -1,0 +1,13 @@
+<f:if condition="{data}">
+    <f:for each="{data}" as="cat" iteration="ii">
+        <div class="ms-4 mt-2">
+            <f:form.radio property="{property}" value="{cat.uid}" checked="{res} == {cat.uid}" class="cursor-pointer" />
+            {cat.title}
+            <f:if condition="{cat.childs}">
+                <f:if condition="{cat.childs}">
+                    <f:render partial="childs" arguments="{data: cat.childs,property:property,res:res}" />
+                </f:if>
+            </f:if>
+        </div>
+    </f:for>
+</f:if>

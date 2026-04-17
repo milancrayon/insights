@@ -1,0 +1,95 @@
+<div class="container-fixed post_list my-4">
+    <f:if condition="{items}">
+        <f:then>
+            <div class="row">
+                <f:for each="{items}" as="item" iteration="i">
+                    <div class="col-md-4 mb-4">
+                        <div class="card shadow-sm">
+                            <div class="img-wrapper">
+                                <f:for each="{thumbnail_{i.index}}" as="img">
+                                    <f:image image="{img}" alt="image" class="card-img-top"
+                                        style="object-fit: cover;" />
+                                </f:for>
+                            </div>
+
+                            <div class="card-body">
+                                <div class="author_views">
+                                    <f:if condition="{displayauthor}">
+                                        <p class="card-author">{author_{i.index}}</p>
+                                    </f:if>
+                                    <p class="card-views">{item.viewers} views</p>
+                                </div>
+                                <div class="card-content">
+                                    <f:link.action action="postdetail" controller="Insights" extensionName="Insights"
+                                        pluginName="Postdetail" arguments="{item: item, category: item.primaryCategory}"
+                                        pageUid="{settings.detailPid}">
+                                        <h5>{item.title}</h5>
+                                    </f:link.action>
+                                    <div class="card-text">
+                                        <f:format.html>
+                                            {item.teaser -> f:format.nl2br()}
+                                        </f:format.html>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="read_more">
+                                <f:link.action action="postdetail" controller="Insights" extensionName="Insights"
+                                    pluginName="Postdetail" arguments="{item: item, category: item.primaryCategory}" pageUid="{settings.detailPid}">
+                                    Read More
+                                </f:link.action>
+                            </div>
+                        </div>
+                    </div>
+                </f:for>
+            </div>
+        </f:then>
+        <f:else>
+            <p class="card-text">N0 Items Found !! </p>
+        </f:else>
+    </f:if>
+
+    <f:if condition="{items}">
+        <nav aria-label="Page navigation">
+            <ul class="pagination justify-content-center align-items-center">
+
+                <li class="page-item">
+                    <f:if condition="{previousPage}">
+                        <f:then>
+                            <f:link.page pageUid="{data.uid}" additionalParams="{page: previousPage}" class="page-link">
+                                <i class="ki-duotone ki-double-left fs-6 page-link"></i>
+                            </f:link.page>
+                        </f:then>
+                        <f:else>
+                            <span class="page-link disabled"> <i class="ki-duotone ki-left fs-6 page-link"></i></span>
+                        </f:else>
+                    </f:if>
+                </li>
+
+                <f:for each="{pagination.allPageNumbers}" as="pageNumber">
+                    <li class="page-item {f:if(condition: pageNumber == currentPage, then:'active')}">
+                        <f:link.page pageUid="{data.uid}" addQueryString="1" addQueryStringExclude="p"
+                            additionalParams="{page: pageNumber}" class="page-link">
+                            {pageNumber}
+                        </f:link.page>
+                    </li>
+                </f:for>
+
+                <li class="page-item">
+                    <f:if condition="{nextPage}">
+                        <f:then>
+                            <f:link.page pageUid="{data.uid}" additionalParams="{page: nextPage}" class="page-link">
+                                <i class="ki-duotone ki-right fs-6 page-link"></i>
+                            </f:link.page>
+                        </f:then>
+                        <f:else>
+                            <span class="page-link disabled"><i
+                                    class="ki-duotone ki-double-right fs-6 page-link"></i></span>
+                        </f:else>
+                    </f:if>
+                </li>
+
+            </ul>
+
+        </nav>
+    </f:if>
+</div>

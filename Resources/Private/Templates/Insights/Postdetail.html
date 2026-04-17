@@ -1,0 +1,349 @@
+<div class="container-fixed post_detail py-2">
+    <f:if condition="{item}">
+
+        <div class="heading mt-5 mb-3 d-flex flex-column gap-0 justify-content-center align-items-center">
+            <f:if condition="{author}">
+                <h6 class="author_name_data">{author.name}</h6>
+            </f:if>
+            <h1 class="title display-4 m-0 p-0">{item.title}</h1>
+            <p class="publishdate">
+                on <f:format.date>{item.publishdate}</f:format.date>
+            </p>
+        </div>
+
+        <f:if condition="{thumbnail}">
+            <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
+                <div class="carousel-inner">
+                    <f:for each="{thumbnail}" as="th" iteration="iterator">
+                        <div class="carousel-item{f:if(condition: iterator.isFirst, then: ' active')}">
+                            <f:image image="{th}" treatIdAsReference="1" alt="Thumbnail"
+                                class="img-fluid thumbnailimage d-block" />
+                        </div>
+                    </f:for>
+                </div>
+                <f:if condition="{item.thumbnail -> f:count()} > 1">
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying"
+                        data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleAutoplaying"
+                        data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </f:if>
+            </div>
+        </f:if>
+
+        <!-- author detail  -->
+        <f:if condition="{displayauthor}">
+            <f:if condition="{author}">
+                <div class="row author-detail py-5">
+                    <div class="col-12 col-md-2 d-flex justify-content-center">
+                        <div class="author-avatar">
+                            <f:if condition="{author.avtar}">
+                                <f:then>
+                                    <f:for each="{author.avtar}" as="avtr" iteration="i">
+                                        <f:if condition="{i.isFirst}">
+
+                                            <f:image image="{avtr}" treatIdAsReference="1" alt="Author"
+                                                title="{author.name}" class="img-fluid rounded-circle" width="100px"
+                                                height="100px" />
+                                        </f:if>
+                                    </f:for>
+                                </f:then>
+                                <f:else>
+                                    <img src="{f:uri.resource(path: 'Images/default-avatar.png', extensionName: 'insights')}"
+                                        alt="Default Avatar" title="Default Avatar" class="img-fluid rounded-circle"
+                                        width="100" height="100" />
+                                </f:else>
+                            </f:if>
+                        </div>
+                    </div>
+                    <div class="col-12 col-md-10">
+                        <div class="author-info">
+                            <div
+                                class="d-flex flex-row flex-wrap justify-content-between align-content-center align-items-center gap-2">
+                                <div class="mb-2">
+                                    <strong
+                                        class="author_name text-capitalize p-0 m-0 fs-4 fw-bolder">{author.name}</strong>
+                                    <p class="author_designation fs-6 fw-normal">{author.designation}</p>
+                                </div>
+                                <div class="social-media-links d-flex flex-row flex-wrap gap-1">
+                                    <f:if condition="{author.socialmedia}">
+                                        <f:then>
+                                            <f:for each="{author.socialmedia}" as="smd">
+                                                <f:link.external uri="{smd.f17654463090}">
+                                                    <f:for each="{smd.f17654463231}" as="sl">
+                                                        <f:image src="{sl.uid}" treatIdAsReference="1" alt="Social Icon"
+                                                            title="{author.name}" class="img-fluid sm_icons"
+                                                            width="30px" height="30px" />
+                                                    </f:for>
+                                                </f:link.external>
+                                            </f:for>
+                                        </f:then>
+                                    </f:if>
+                                </div>
+                            </div>
+                            <div class="author_intro text-secondary pt-1  fst-italic">
+                                <f:format.html>“ {author.intro -> f:format.trim()} ”</f:format.html>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </f:if>
+        </f:if>
+
+        <f:if condition="{nextprvbtn}">
+            <div class="row nextprvbtn my-3 gap-2 text-center justify-content-between text-align-center mb-5">
+                <div class="col-12 md-col-6 prevnext_button">
+                    <a href="{previouspostDataurl}">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="currentColor"
+                            class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0m-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5z" />
+                        </svg>
+                        <span class="ps-2 text-start"> {previouspost.title}</span>
+                    </a>
+                </div>
+                <div class="col-12 md-col-6 text-end">
+                    <a href="{nextpostDataurl}">
+                        <span class="pe-2">{nextpost.title}</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="23" height="23" fill="currentColor"
+                            class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8m15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0M4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </f:if>
+
+        <!-- title like view  -->
+        <div
+            class="item_data d-flex flex-row flex-wrap justify-content-between align-content-center align-items-center my-4 px-5">
+            <div class="col-10">
+                <h3 class="alternative_title">{item.alternativetitle}</h3>
+                <div class="d-flex flex-row flex-wrap align-items-center gap-2">
+                    <div class="views text-secondary align-items-center">
+                        <i class="ki-duotone ki-eye fs-6"></i>
+                        <span>{item.viewers} views</span>
+                    </div>
+                    <div class="read_time text-secondary align-items-center">
+                        <i class="ki-duotone ki-time fs-6"></i>
+                        <span>
+                            <span hidden>__readtime__</span> Min
+                            read
+                        </span>
+                    </div>
+                </div>
+            </div>
+            <div class="clearfix">
+                <div
+                    class="d-flex flex-row flex-wrap justify-content-center align-content-center align-items-center gap-1">
+                    <div class="like_sec">
+                        <f:form action="like" controller="Insights" pluginName="PostDetail" method="post"
+                            extensionName="Insights" pageUid="{settings.detailPid}">
+                            <f:form.hidden name="uid" value="{item.uid}" />
+                            <span class="likes">{likes}</span>
+                            <button type="submit" class="btn p-0 m-0">
+                                <f:if condition="{isliked}">
+                                    <f:then>
+                                        <i class="ki-duotone ki-like fs-5 text-primary"></i>
+                                    </f:then>
+                                    <f:else>
+                                        <i class="ki-duotone ki-like fs-5 text-secondary"></i>
+                                    </f:else>
+                                </f:if>
+                            </button>
+                        </f:form>
+                    </div>
+                    <div class="dislike_sec">
+                        <f:form action="dislike" controller="Insights" pluginName="PostDetail" method="post"
+                            extensionName="Insights" pageUid="{settings.detailPid}">
+                            <f:form.hidden name="uid" value="{item.uid}" />
+                            <span class="dislikes">{dislikes}</span>
+                            <button type="submit" class="btn p-0 m-0">
+                                <f:if condition="{isdisliked}">
+                                    <f:then>
+                                        <i class="ki-duotone ki-dislike fs-5 text-danger"></i>
+                                    </f:then>
+                                    <f:else>
+                                        <i class="ki-duotone ki-dislike fs-5 text-secondary"></i>
+                                    </f:else>
+                                </f:if>
+                            </button>
+                        </f:form>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <f:if condition="{item.description}">
+            <div class="description mb-4 px-5">
+                <f:format.html>{item.description}</f:format.html>
+            </div>
+        </f:if>
+
+        <f:if condition="{item.celement}">
+            <div class="item_content border-top border-bottom py-3 my-2 px-5">
+                <!-- <h3 class="alternative_title text-center my-5">Additional Info</h3> -->
+                <f:cObject typoscriptObjectPath="lib.content">{item.celementIdList}
+                </f:cObject>
+            </div>
+        </f:if>
+
+        <div
+            class="tag_socialshare d-flex flex-row flex-wrap justify-content-between align-content-center align-items-center pt-2 pb-3 border-bottom mb-3 gap-4">
+            <f:if condition="{tags}">
+
+                <div>
+                    <span class="me-3"> Tags </span>
+                    <f:for each="{tags}" as="tg" iteration="i">
+                        <span class="tag_title">{tg.title}</span>
+                    </f:for>
+                </div>
+            </f:if>
+            <f:if condition="{socialshare}">
+                <div class="sharemodal">
+                    <a href="#" class="ezd-share-btn modal-toggle">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-share" viewBox="0 0 16 16" style="padding-top: 4px;">
+                            <path
+                                d="M13.5 1a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.5 2.5 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5m-8.5 4a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3m11 5.5a1.5 1.5 0 1 0 0 3 1.5 1.5 0 0 0 0-3">
+                            </path>
+                        </svg>
+                        <span> Share this Doc</span>
+                    </a>
+                    <div class="ezd-modal" id="eazydocs_share" data-id="modal2" data-original-size="16px">
+                        <div class="ezd-modal-overlay modal-toggle" data-original-size="16px"></div>
+                        <div class="ezd-modal-dialog" role="document" data-original-size="16px">
+                            <div class="ezd-modal-content" data-original-size="16px">
+                                <a class="close ezd-close" data-original-size="34px">
+                                    <i class=" icon_close" data-original-size="34px"></i>
+                                </a>
+                                <div class="eazydocs-share-wrap" data-original-size="16px">
+                                    <h2 data-original-size="24px"> Overview </h2>
+                                    <f:if condition="{socialmedia}">
+                                        <div class="social-links d-flex flex-row justify-content-centerflex-wrap gap-2">
+
+                                            <f:for each="{socialmedia}" as="smmd">
+                                                <f:link.external uri="{smmd.link}{currentUrl}" title="{smmd.title}">
+
+                                                    <f:image src="{smmd.icon}" alt="{smmd.title}" title="{smmd.title}"
+                                                        class="img-fluid" width="40" height="40" />
+
+                                                </f:link.external>
+                                            </f:for>
+
+                                        </div>
+                                    </f:if>
+                                    <p data-original-size="14px"> Or copy link </p>
+                                    <div class="copy-url-wrap" data-original-size="16px">
+                                        <input readonly="" type="text" class="word-wrap current-url" id="share-url"
+                                            name="share_url" data-original-size="15px">
+                                        <div class="share-this-doc" data-success-message="URL copied to clipboard"
+                                            data-original-size="20px">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-copy" viewBox="0 0 16 16">
+                                                <path fill-rule="evenodd"
+                                                    d="M4 2a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1zM2 5a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1v-1h1v1a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h1v1z">
+                                                </path>
+                                            </svg>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </f:if>
+        </div>
+
+
+
+
+        <f:if condition="{displaycomment}">
+            <f:if condition="{comments}">
+                <div class="comments border-bottom pb-4 mb-2 mt-4">
+                    <h3 class="alternative_title">Comments ({comments -> f:count()})</h3>
+                    <div class="ps-4">
+                        <f:for each="{comments}" as="cmnt" iteration="i">
+                            <div class="border-4 border-start border-secondary my-3 ps-3 d-flex flex-column gap-1 ">
+                                <div class="content pt-3 d-flex flex-row justify-content-between">
+                                    <f:format.html>“{cmnt.comment -> f:format.trim()} ”</f:format.html>
+                                    <p class="text-end comment_date">
+                                        {cmnt.crdate -> f:format.date(pattern: 'd MMMM Y h:m:s a')}
+                                    </p>
+                                </div>
+                                <p class="pb-3 text-secondary ">- {cmnt.name} ({cmnt.email}) </p>
+                            </div>
+                        </f:for>
+                    </div>
+                </div>
+            </f:if>
+        </f:if>
+
+        <f:if condition="{addcomments}">
+            <f:render partial="Insights/Commentform" arguments="{_all}" />
+        </f:if>
+
+        <f:if condition="{item.relatedfiles}">
+            <div class="my-2 py-5 text-center">
+                <h3 class="alternative_title mb-4">Related Files</h3>
+                <div class="owl-carousel related-files-carousel d-block">
+                    <f:for each="{item.relatedfiles}" as="file">
+                        <div class="item">
+                            <f:media file="{file}" class="img-fluid rounded" />
+                        </div>
+                    </f:for>
+                </div>
+            </div>
+        </f:if>
+
+        <f:if condition="{relatedposts}">
+            <div class="my-5">
+                <h3 class="alternative_title text-center pb-3">Related post</h3>
+                <div class="relatedposts">
+                    <f:for each="{relatedposts}" as="rpst" iteration="i">
+                        <div
+                            class="related-post-card card w-100 d-flex flex-column flex-md-row p-3 mb-3 gap-4 align-items-center">
+                            <f:if condition="{rpst.thumbnail}">
+                                <div id="carouselRelatedPosts-{rpst.uid}" class="carousel slide"
+                                    data-bs-ride="carousel">
+                                    <div class="carousel-inner">
+                                        <f:for each="{rpst.thumbnail}" as="thumbnail" iteration="iterator">
+                                            <div
+                                                class="carousel-item{f:if(condition: iterator.isFirst, then: ' active')}">
+                                                <f:image image="{thumbnail}" alt="Related post image"
+                                                    class="img-fluid related-post-thumbnail d-block" maxWidth="125" />
+                                            </div>
+                                        </f:for>
+                                    </div>
+                                    <f:if condition="{rpst.thumbnail -> f:count()} > 1">
+                                        <button class="carousel-control-prev" type="button"
+                                            data-bs-target="#carouselRelatedPosts-{rpst.uid}" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon"></span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button"
+                                            data-bs-target="#carouselRelatedPosts-{rpst.uid}" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon"></span>
+                                        </button>
+                                    </f:if>
+                                </div>
+                            </f:if>
+                            <div class="d-flex flex-column gap-1">
+                                <strong>{rpst.title}</strong>
+                                <div class="related-post-teaser">
+                                    <f:format.html>{rpst.teaser}</f:format.html>
+                                </div>
+                            </div>
+                        </div>
+                    </f:for>
+                </div>
+            </div>
+        </f:if>
+
+
+    </f:if>
+</div>

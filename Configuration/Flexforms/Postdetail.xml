@@ -1,0 +1,23 @@
+<T3DataStructure>
+    <sheets>
+        <sDEF>
+            <ROOT>
+                <sheetTitle> General </sheetTitle>
+                <type>array</type>
+                <el>
+                    <settings.listPid> 
+                        <label>LLL:EXT:insights/Resources/Private/Language/locallang.xlf:listPid</label>
+                        <config>
+                            <type>group</type>
+                            <allowed>pages</allowed>
+                            <required>1</required>
+                            <size>1</size>
+                            <maxitems>1</maxitems>
+                            <minitems>1</minitems>
+                        </config> 
+                    </settings.listPid>
+                </el>
+            </ROOT>
+        </sDEF>
+    </sheets>
+</T3DataStructure>

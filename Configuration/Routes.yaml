@@ -1,0 +1,63 @@
+routeEnhancers:
+  Insights:
+    type: Extbase
+    extension: Insights
+    plugin: Postlist
+    limitToPages: [32]
+    routes:
+      - routePath: ''
+        _controller: 'Insights::postlist'
+      - routePath: 'page-{page}'
+        _controller: 'Insights::postlist'
+        _arguments:
+          page: page
+    defaultController: 'Insights::postlist'
+    aspects:
+      page:
+        type: StaticRangeMapper
+        start: '1'
+        end: '50'
+
+  InsightsPostDetail:
+    type: Extbase
+    extension: Insights
+    plugin: Postdetail
+    limitToPages: [29]
+    routes:
+      - routePath: '{category}/{item}'
+        _controller: 'Insights::postdetail'
+        _arguments:
+          item: item
+          category: category
+    defaultController: 'Insights::postdetail'
+    aspects:
+      category:
+        type: PersistedHierarchicalAliasMapper
+        tableName: sys_category
+        routeFieldName: slug
+        parentFieldName: parent
+      item:
+        type: PersistedAliasMapper
+        tableName: tx_insights_domain_model_post
+        routeFieldName: slug
+  InsightsCategoryListing:
+    type: Extbase
+    extension: Insights
+    plugin: Categoryinsights
+    limitToPages: [32]
+    routes:
+      - routePath: '{category}'
+        _controller: 'Insights::categoryinsights'
+        _arguments:
+          category: category
+    defaultController: 'Insights::categoryinsights'
+    aspects:
+      category:
+        type: PersistedHierarchicalAliasMapper
+        tableName: sys_category
+        routeFieldName: slug
+        parentFieldName: parent
+
+settings:
+  insightsDetailPid: 29
+  insightsCategoryPid: 32

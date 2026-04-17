@@ -1,0 +1,100 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers"
+    xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:asset.css identifier="interFont">
+    https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700
+</f:asset.css>
+<f:layout name="Default" />
+<f:section name="content">
+     <div class="container-fixed ">
+        <h1 class="p-2 rounded-4 heading mt-4 pb-0">News List</h1>
+    </div>
+    <div class="container-fixed my-3 rounded insight_table">
+        <div class="table-responsive my-3 shadow-sm border border-1 rounded-4 bg-white">
+            <!-- filter collumns  -->
+            <div class="filters">
+                <div class="d-flex flex-column flex-md-row justify-content-center justify-content-md-between flex-wrap gap-2 align-items-center">
+                    <input type="date" id="filter-date" class="date-input form-control w-auto" placeholder="Publish Date" />
+                    <select id="filter-category" class="filter-control form-select w-auto">
+                        <option value="">All Categories</option>
+                        <f:for each="{category}" as="cts">
+                            <option value="{cts.uid}">{cts.title}</option>
+                        </f:for>
+                    </select>
+                    <select id="filter-author" class="filter-control form-select w-auto">
+                        <option value="">All Authors</option>
+                        <f:for each="{authors}" as="ath">
+                            <option value="{ath.uid}">{ath.name}</option>
+                        </f:for>
+                    </select>
+                    <select id="filter-tag" class="filter-control form-select w-auto">
+                        <option value="">All Tags</option>
+                        <f:for each="{tags}" as="thh">
+                            <option value="{thh.uid}">{thh.title}</option>
+                        </f:for>
+                    </select>
+                </div>
+            </div>
+
+            <!-- table  -->
+            <table id="be_table_posts" class="table table-bordered align-middle custom-table dataTable dtr-inline">
+                <thead class="table-light">
+                    <tr>
+                        <th>Publish Date</th>
+                        <th>Title</th>
+                        <th>Category</th>
+                        <th>Author</th>
+                        <th>Tags</th>
+                        <th>Viewers</th>
+                        <th>Likes</th>
+                        <th>Action</th>
+                        <th>Id</th>
+                        <th>Alternative Title</th>
+                        <th>Meta Keyword</th>
+                        <th>Meta Description</th>
+                        <th>Teaser</th>
+                        <th>Description</th>
+                        <th>Archive Date</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+    <div id="post-popup"  style="display:none;">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div class="modal-title"></div>
+                <div class="close">
+                    <span class="close-popup">&times;</span>
+                </div>
+            </div>
+            <div class="modal-body">
+                <ul class="nav nav-tabs" id="myTab" role="tablist">
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link active" id="details-tab" data-bs-toggle="tab" data-bs-target="#details"
+                            type="button" role="tab" aria-controls="details" aria-selected="true">
+                            <f:translate
+                                key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:table_details" />
+                        </button>
+                    </li>
+                    <li class="nav-item" role="presentation">
+                        <button class="nav-link " id="likes-tab" data-bs-toggle="tab" data-bs-target="#likes"
+                            type="button" role="tab" aria-controls="likes" aria-selected="false">
+                            <f:translate key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:table_likes" />
+                        </button>
+                    </li>
+                </ul>
+                <div class="tab-content" id="myTabContent">
+                    <div class="tab-pane fade in show active" id="details" role="tabpanel"
+                        aria-labelledby="details-tab">
+                        Details
+                    </div>
+                    <div class="tab-pane fade in " id="likes" role="tabpanel" aria-labelledby="likes-tab">
+                        Likes
+                    </div>
+                </div>
+            </div>
+        </div>
+</f:section>
+
+</html>

@@ -1,0 +1,28 @@
+<f:if condition="{items}">
+    <f:then>
+        <div class="container-fixed tag_list ">
+            <div class="d-flex flex-row flex-wrap gap-3 border-bottom my-3 pt-3 pb-4 justify-contet-between">
+                <h3 class="alternative_title m-0 p-0 align-content-center fs-5">Recent Tags : </h3>
+                <div class="d-flex flex-row flex-wrap gap-3">
+                    <f:for each="{items}" as="item" iteration="i">
+                        <div class="card shadow-sm border-light">
+                            <div class="card-body text-center">
+                                <h5 class="card-title m-0 p-0">
+                                    <f:link.page pageUid="{settings.storageid}" additionalParams="{tags: item.uid}"
+                                        class="text-decoration-none text-dark">
+                                        {item.title}
+                                    </f:link.page>
+                                </h5>
+                            </div>
+                        </div>
+                    </f:for>
+                </div>
+            </div>
+        </div>
+    </f:then>
+    <f:else>
+        <div class="container-fixed mt-4">
+            <p class="text-center text-danger">No items found!</p>
+        </div>
+    </f:else>
+</f:if>

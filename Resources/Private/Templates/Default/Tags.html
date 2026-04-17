@@ -1,0 +1,50 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers"
+    xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:asset.css identifier="interFont">
+    https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700
+</f:asset.css>
+<f:layout name="Default" />
+<f:section name="content">
+    <div class="container-fixed ">
+        <h1 class="p-2 rounded-4 heading mt-4 pb-0">Tags</h1>
+    </div>
+    <div class="container-fixed my-3 insight_table">
+        <div class="tags-list">
+            <f:if condition="{tags_items}" >
+                <f:then>
+                    <f:for each="{tags_items}" as="item" iteration="i">
+                        <div class="tag-card">
+                            <div class="tag-svg">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="19" height="19" fill="rgb(255 135 0)"
+                                    class="bi bi-tags-fill" viewBox="0 0 16 16">
+                                    <path
+                                        d="M2 2a1 1 0 0 1 1-1h4.586a1 1 0 0 1 .707.293l7 7a1 1 0 0 1 0 1.414l-4.586 4.586a1 1 0 0 1-1.414 0l-7-7A1 1 0 0 1 2 6.586zm3.5 4a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3">
+                                    </path>
+                                    <path
+                                        d="M1.293 7.793A1 1 0 0 1 1 7.086V2a1 1 0 0 0-1 1v4.586a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l.043-.043z">
+                                    </path>
+                                </svg>
+                            </div>
+                            <div class="tag-text">
+                                <h3 class="tag-title">
+                                    {item.title}
+                                    <span class="tag-slug">[{item.slug}]</span>
+                                </h3>
+                                <f:link.typolink parameter="{edit_tag_{i.index}}" class="tag-edit"
+                                    additionalAttributes="{type:'button'}">
+                                    <i class="ki-duotone ki-notepad-edit editicon"></i>
+                                </f:link.typolink>
+                            </div>
+                        </div>
+                    </f:for>
+                </f:then>
+                <f:else>
+                    <p class="text-center">No tags found!!</p>
+                </f:else>
+            </f:if>
+        </div>
+    </div>
+</f:section>
+
+</html>

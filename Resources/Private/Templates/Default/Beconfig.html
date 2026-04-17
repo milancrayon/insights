@@ -1,0 +1,648 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers"
+    xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:asset.css identifier="interFont">
+    https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700
+</f:asset.css>
+<f:layout name="Default" />
+<f:section name="content">
+    <div class="container-fixed my-5 beconfig_tab">
+        <div class="row">
+            <!-- sidebar  -->
+            <div class="col-12 col-md-3 tabs" id="myTab" role="tablist">
+                <div class="accordion" id="sidebarMenu">
+                    <div class="accordion-item" role="presentation">
+                        <h2 class="accordion-header">
+                            <button
+                                class="accordion-button collapsed d-inline-flex align-items-center justify-content-between w-100 accordion-toggle"
+                                id="basic-tab" type="button" role="tab" aria-controls="basic" aria-selected="false">
+                                <span>
+                                    <i class="ki-duotone ki-setting fs-5"></i>
+                                    <f:translate
+                                        key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:basic_option" />
+                                </span>
+                                <i class="ki-duotone ki-down fs-5 arrow"></i>
+                            </button>
+                            <div id="basic" class="accordion-body p-0 pt-1">
+                                <ul class="list-group list-group-flush">
+
+                                    <li class="list-group-item menu-link" data-target="#bscCommentOption">
+                                        <i class="ki-duotone ki-message-text-2 fs-5"></i>
+                                        <span>
+                                            <f:translate
+                                                key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:comment_option" />
+                                        </span>
+                                    </li>
+                                    <li class="list-group-item menu-link" data-target="#bscNewsOption">
+                                        <i class="ki-duotone ki-rocket fs-4"></i>
+                                        <span>
+                                            <f:translate
+                                                key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:news_option" />
+                                        </span>
+                                    </li>
+                                    <li class="list-group-item menu-link" data-target="#aiOption">
+                                        <i class="ki-duotone ki-setting fs-5"></i>
+                                        <span>
+                                            <f:translate
+                                                key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:ai_option" />
+                                        </span>
+                                    </li>
+                                    <li class="list-group-item menu-link" data-target="#sm">
+                                        <i class="ki-duotone ki-fasten fs-5"></i>
+                                        <span>
+                                            <f:translate
+                                                key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:sm_option" />
+                                        </span>
+                                    </li>
+
+                                </ul>
+                            </div>
+                        </h2>
+                    </div>
+
+                    <div class="accordion-item" role="presentation">
+                        <h2 class="accordion-header">
+                            <button
+                                class="accordion-button collapsed d-inline-flex align-items-center justify-content-between w-100 accordion-toggle"
+                                id="template-tab" type="button" role="tab" aria-controls="template"
+                                aria-selected="false">
+                                <span>
+                                    <i class="ki-duotone ki-setting-4 fs-5"></i>
+                                    <f:translate
+                                        key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:template_option" />
+                                </span>
+                                <i class="ki-duotone ki-down fs-5 arrow"></i>
+                            </button>
+                            <div id="template" class="accordion-body p-0 pt-1">
+                                <ul class="list-group list-group-flush">
+
+                                    <li class="list-group-item menu-link" data-target="#tplPostList">
+                                        <i class="ki-duotone ki-clipboard fs-5"></i>
+                                        <span>
+                                            <f:translate
+                                                key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:post_list" />
+                                        </span>
+                                    </li>
+                                    <li class="list-group-item menu-link" data-target="#tplPostDetails">
+                                        <i class="ki-duotone ki-slider-vertical fs-5"></i>
+                                        <span>
+                                            <f:translate
+                                                key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:post_detail" />
+                                        </span>
+                                    </li>
+                                    <li class="list-group-item menu-link" data-target="#tplCommentForm">
+                                        <i class="ki-duotone ki-message-text-2 fs-5"></i>
+                                        <span>
+                                            <f:translate
+                                                key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:comment_form" />
+                                        </span>
+                                    </li>
+
+                                    <li class="list-group-item menu-link" data-target="#tplTags">
+                                        <i class="ki-duotone ki-price-tag fs-5"></i>
+                                        <span>
+                                            <f:translate
+                                                key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:beconfig_tags" />
+                                        </span>
+                                    </li>
+
+                                    <li class="list-group-item menu-link" data-target="#tplPostFilter">
+                                        <i class="ki-duotone ki-filter-square fs-5"></i>
+                                        <span>
+                                            <f:translate
+                                                key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:post_flters" />
+                                        </span>
+                                    </li>
+
+
+                                    <li class="list-group-item menu-link" data-target="#tplFilterResult">
+                                        <i class="ki-duotone ki-filter-tick fs-5"></i>
+                                        <span>
+                                            <f:translate
+                                                key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:filter_Result_list" />
+                                        </span>
+                                    </li>
+                                    <li class="list-group-item menu-link" data-target="#tplRecommended">
+                                        <i class="ki-duotone ki-filter-tick fs-5"></i>
+                                        <span>
+                                            <f:translate
+                                                key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:recommended" />
+                                        </span>
+                                    </li>
+                                    <li class="list-group-item menu-link" data-target="#tplCategoryinsights">
+                                        <i class="ki-duotone ki-filter-tick fs-5"></i>
+                                        <span>
+                                            <f:translate
+                                                key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:category_insights" />
+                                        </span>
+                                    </li>
+                                    <li class="list-group-item menu-link" data-target="#tplQuicksearch">
+                                        <i class="ki-duotone ki-filter-tick fs-5"></i>
+                                        <span>
+                                            <f:translate
+                                                key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:quicksearch" />
+                                        </span>
+                                    </li>
+                                    <li class="list-group-item menu-link" data-target="#tplBreadcrumbs">
+                                        <i class="ki-duotone ki-filter-tick fs-5"></i>
+                                        <span>
+                                            <f:translate
+                                                key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:breadcrumbs_title" />
+                                        </span>
+                                    </li>
+                                    <li class="list-group-item menu-link" data-target="#tplInsightelements">
+                                        <i class="ki-duotone ki-filter-tick fs-5"></i>
+                                        <span>
+                                            <f:translate
+                                                key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:insightelements_title" />
+                                        </span>
+                                    </li>
+                                    <li class="list-group-item menu-link" data-target="#tplSearchpopular">
+                                        <i class="ki-duotone ki-filter-tick fs-5"></i>
+                                        <span>
+                                            <f:translate
+                                                key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:searchpopular_title" />
+                                        </span>
+                                    </li>
+
+
+
+                                </ul>
+                            </div>
+                        </h2>
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- content  -->
+            <div class="col-12 col-md-9 tabcontent">
+                <div id="content-area">
+                    <f:form action="saveconfig" enctype="multipart/form-data" name="basic" object="{basic}">
+                        <div class="content-box show" id="bscCommentOption">
+                            <div class="row my-3 heading">
+                                <div class="col-12 col-md-6 p-0">
+                                    <h2>
+                                        <f:translate
+                                            key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:comment" />
+                                    </h2>
+                                </div>
+                            </div>
+                            <div class="option-wrapper">
+                                <div class="col-12 col-md-6 ">
+                                    <div class="form-group row">
+                                        <label for="displaycomment" class="col-auto">
+                                            <f:translate
+                                                key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:displaycomment" />
+                                        </label>
+                                        <div class="form-check form-switch col-auto">
+                                            <input type="checkbox" name="displaycomment" value="1"
+                                                class="form-check-input t3js-toggle-record" id="displaycomment"
+                                                data-table="tx_insights_domain_model_config" data-uid="{item.uid}"
+                                                data-field="displaycomment" {f:if(condition: displaycomment,
+                                                then: 'checked' )}>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 status_to_show_row hide">
+                                    <div class="form-group row">
+                                        <label for="status_to_show inline" class="col-auto">
+                                            <f:translate
+                                                key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:allcomments" />
+                                        </label>
+                                        <div class="form-check form-switch col-auto">
+                                            <input type="checkbox" name="status_to_show" value="1"
+                                                class="form-check-input t3js-toggle-record" id="status_to_show"
+                                                data-table="tx_insights_domain_model_config" data-uid="{item.uid}"
+                                                data-field="status_to_show" {f:if(condition: status_to_show,
+                                                then: 'checked' )}>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 ">
+                                    <div class="form-group row ">
+                                        <label for="addcomments" class="col-auto">
+                                            <f:translate
+                                                key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:addcomments" />
+                                        </label>
+                                        <div class="form-check form-switch col-auto">
+                                            <input type="checkbox" name="addcomments" value="1"
+                                                class="form-check-input t3js-toggle-record" id="addcomments"
+                                                data-table="tx_insights_domain_model_config" data-uid="{item.uid}"
+                                                data-field="addcomments" {f:if(condition: addcomments, then: 'checked'
+                                                )}>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6 ">
+                                    <div class="form-group row mb-0">
+                                        <label for="langwisecomment" class="col-auto">
+                                            <f:translate
+                                                key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:langwisecomment" />
+                                        </label>
+                                        <div class="form-check form-switch col-auto">
+                                            <input type="checkbox" name="langwisecomment" value="1"
+                                                class="form-check-input t3js-toggle-record" id="langwisecomment"
+                                                data-table="tx_insights_domain_model_config" data-uid="{item.uid}"
+                                                data-field="langwisecomment" {f:if(condition: langwisecomment,
+                                                then: 'checked' )}>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-box" id="bscNewsOption">
+                            <div class="row my-3 heading">
+                                <div class="col-12 col-md-6 p-0 ">
+                                    <h2>
+                                        <f:translate
+                                            key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:news_Setting" />
+                                    </h2>
+                                </div>
+                            </div>
+                            <div class="option-wrapper">
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group row d-flex align-items-center">
+                                        <label for="storageid" class="col-auto">
+                                            <f:translate
+                                                key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:storageid" />
+                                        </label>
+                                        <f:form.select class="col-auto filter-control js-select2" id="storageid"
+                                            name="storageid" options="{folders}" value="{storageid}" />
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group row">
+                                        <label for="nextprvbtn" class="col-auto">
+                                            <f:translate
+                                                key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:nextprvbtn" />
+                                        </label>
+                                        <div class="form-check form-switch col-auto">
+                                            <input type="checkbox" name="nextprvbtn" value="1"
+                                                class="form-check-input t3js-toggle-record" id="nextprvbtn"
+                                                data-table="tx_insights_domain_model_config" data-uid="{item.uid}"
+                                                data-field="nextprvbtn" {f:if(condition: nextprvbtn, then: 'checked' )}>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group row">
+                                        <label for="socialshare" class="col-auto">
+                                            <f:translate
+                                                key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:socialshare" />
+                                        </label>
+                                        <div class="form-check form-switch col-auto">
+                                            <input type="checkbox" name="socialshare" value="1"
+                                                class="form-check-input t3js-toggle-record" id="socialshare"
+                                                data-table="tx_insights_domain_model_config" data-uid="{item.uid}"
+                                                data-field="socialshare" {f:if(condition: socialshare, then: 'checked'
+                                                )}>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-12 col-md-6">
+                                    <div class="form-group row mb-0">
+                                        <label for="displayauthor" class="col-auto">
+                                            <f:translate
+                                                key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:displayauthor" />
+                                        </label>
+                                        <div class="form-check form-switch col-auto">
+                                            <input type="checkbox" name="displayauthor" value="1"
+                                                class="form-check-input t3js-toggle-record" id="displayauthor"
+                                                data-table="tx_insights_domain_model_config" data-uid="{item.uid}"
+                                                data-field="displayauthor" {f:if(condition: displayauthor,
+                                                then: 'checked' )}>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="content-box" id="aiOption">
+                            <div class="row my-3 heading">
+                                <div class="col-12 col-md-6 p-0 ">
+                                    <h2>
+                                        <f:translate
+                                            key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:ai_option" />
+                                    </h2>
+                                </div>
+                            </div>
+                            <div class="option-wrapper ai-wrapper pb-0">
+                                <f:for each="{aiModels}" as="model" iteration="i">
+                                    <div class="border py-3 social-row row w-100 position-relative">
+                                        <div class="col-3">
+                                            <label>
+                                                <f:translate
+                                                    key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:agent" />
+                                            </label>
+                                            <f:form.select class="filter-control js-select2"
+                                                name="aiConfig[{i.index}][agent]" options="{aiModels}"
+                                                optionValueField="key" optionLabelField="label" value="{model.key}" />
+                                        </div>
+
+                                        <div class="col-8">
+                                            <label>
+                                                <f:translate
+                                                    key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:apikey" />
+                                            </label>
+                                            <div class="input-group">
+                                                <f:form.password name="aiConfig[{i.index}][apikey]"
+                                                    value="{model.apikey}" placeholder="Enter API Key"
+                                                    class="form-control js-apikey-input" />
+
+                                                <button class="btn btn-default btn-outline-secondary js-toggle-apikey"
+                                                    type="button">
+                                                    <span class="ki-eye ki-duotone"></span>
+                                                </button>
+                                            </div>
+                                        </div>
+
+                                        <div class="col-1 align-content-center">
+                                            <label>
+                                                <f:translate
+                                                    key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:active" />
+                                            </label>
+                                            <div class="form-check form-switch col-auto justify-content-center">
+                                                <f:form.checkbox name="aiConfig[{i.index}][active]" value="1"
+                                                    checked="{model.active} == 1"
+                                                    class="form-check-input js-ai-toggle" />
+                                            </div>
+                                        </div>
+                                    </div>
+                                </f:for>
+                            </div>
+                        </div>
+                        <div class="text-end mt-md-0 mt-3 savebasicdata">
+                            <button class="btn btn-secondary" type="submit">
+                                <f:image src="EXT:insights/Resources/Public/Icons/saveicon.png" width="17px"
+                                    height="17px" />
+                                <f:translate key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:save" />
+                            </button>
+                        </div>
+                    </f:form>
+
+                    <div class="content-box" id="sm" aria-labelledby="sm-tab">
+                        <div class="sm_tab_section">
+                            <div class="row mt-3 mb-2 heading align-items-center">
+                                <div class="col-12 col-md-6">
+                                    <h2>
+                                        <f:translate
+                                            key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:social_media" />
+                                    </h2>
+                                </div>
+                                <div class="col-12 col-md-6 text-end">
+                                    <button class="btn btn-secondary" id="newsocialmedia">
+                                        <i class="ki-duotone ki-plus fs-3"></i>
+                                        <f:translate
+                                            key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:add_new" />
+                                    </button>
+                                </div>
+                            </div>
+
+                            <div class="row mb-3 w-100">
+                                <f:form action="saveconfig" enctype="multipart/form-data" name="settingsform"
+                                    object="{settings}">
+                                    <div id="socialMediaContainer" class="option-wrapper">
+                                        <f:if condition="{socialmedia}">
+                                            <f:then>
+                                                <f:for each="{socialmedia}" as="sm" iteration="i">
+                                                    <div class=" border ps-3 pe-3 social-row w-100 position-relative">
+                                                        <button class="deletesm" type="button">
+                                                            <i class="ki-duotone ki-trash"></i>
+                                                        </button>
+                                                        <div class="row">
+                                                            <div class="col-12 col-lg-6">
+                                                                <label>
+                                                                    <f:translate
+                                                                        key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:link" />
+                                                                </label>
+                                                                <input type="text"
+                                                                    name="settingsform[socialmedia][{i.index}][link]"
+                                                                    class="form-control" required value="{sm.link}" />
+                                                            </div>
+                                                            <div class="col-12 col-lg-6">
+                                                                <label>
+                                                                    <f:translate
+                                                                        key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:icon" />
+                                                                </label>
+                                                                <div class="position-relative w-100">
+                                                                    <input type="file"
+                                                                        name="settingsform[socialmedia][{i.index}][icon]"
+                                                                        class="form-control pe-5" />
+
+                                                                    <f:if condition="{sm.icon}">
+                                                                        <img src="{sm.icon}"
+                                                                            class="position-absolute top-50 end-0 translate-middle-y me-1 socialicon" />
+                                                                    </f:if>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                    </div>
+                                                </f:for>
+                                            </f:then>
+                                            <f:else>
+                                                <p class="text-center nomedia">No social media found !</p>
+                                            </f:else>
+                                        </f:if>
+                                    </div>
+
+                                    <div class="text-end mt-3">
+                                        <button class="btn btn-secondary" type="submit">
+                                            <f:image src="EXT:insights/Resources/Public/Icons/saveicon.png" width="17px"
+                                                height="17px" />
+                                            <f:translate
+                                                key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:save" />
+                                    </div>
+                                </f:form>
+                            </div>
+                        </div>
+                    </div>
+
+                    <f:form action="savetemplate" enctype="multipart/form-data" name="templateform" object="{settings}"
+                        class="mb-3">
+                        <div class="content-box" id="tplPostList">
+                            <div class="row mt-3 mb-1 heading">
+                                <div class="col-12 col-md-6">
+                                    <h2>
+                                        <f:translate
+                                            key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:post_list" />
+                                    </h2>
+                                </div>
+                            </div>
+                            <div id="Postlist" class="row mb-3 ps-2 pe-3 w-100">
+                                <f:form.textarea class="w-100 insight-editor" id="insight-editor"
+                                    name="templates[Postlist]" value="{templates.Postlist}" />
+                            </div>
+                        </div>
+                        <div class="content-box" id="tplPostDetails">
+                            <div class="row mt-3 mb-1 heading">
+                                <div class="col-12 col-md-6">
+                                    <h2>
+                                        <f:translate
+                                            key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:post_detail" />
+                                    </h2>
+                                </div>
+                            </div>
+                            <div id="Postdetail" class="row mb-3 ps-2 pe-3 w-100">
+                                <f:form.textarea class="w-100 insight-editor" name="templates[Postdetail]"
+                                    value="{templates.Postdetail}" />
+                            </div>
+                        </div>
+                        <div class="content-box" id="tplCommentForm">
+                            <div class="row mt-3 mb-1 heading">
+                                <div class="col-12 col-md-6">
+                                    <h2>
+                                        <f:translate
+                                            key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:comment_form" />
+                                    </h2>
+                                </div>
+                            </div>
+                            <div id="Commentform" class="row mb-3 ps-2 pe-3 w-100">
+                                <f:form.textarea class="w-100 insight-editor" name="templates[Commentform]"
+                                    value="{templates.Commentform}" />
+                            </div>
+                        </div>
+                        <div class="content-box" id="tplTags">
+                            <div class="row mt-3 mb-1 heading">
+                                <div class="col-12 col-md-6">
+                                    <h2>
+                                        <f:translate
+                                            key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:beconfig_tags" />
+                                    </h2>
+                                </div>
+                            </div>
+                            <div id="Tags" class="row mb-3 ps-2 pe-3 w-100">
+                                <f:form.textarea class="w-100 insight-editor" name="templates[Tags]"
+                                    value="{templates.Tags}" />
+                            </div>
+                        </div>
+                        <div class="content-box" id="tplPostFilter">
+                            <div class="row mt-3 mb-1 heading">
+                                <div class="col-12 col-md-6">
+                                    <h2>
+                                        <f:translate
+                                            key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:post_flters" />
+                                    </h2>
+                                </div>
+                            </div>
+                            <div id="Postfilter" class="row mb-3 ps-2 pe-3 w-100">
+                                <f:form.textarea class="w-100 insight-editor" name="templates[Postfilter]"
+                                    value="{templates.Postfilter}" />
+                            </div>
+                        </div>
+                        <div class="content-box" id="tplFilterResult">
+                            <div class="row mt-3 mb-1 heading">
+                                <div class="col-12 col-md-6">
+                                    <h2>
+                                        <f:translate
+                                            key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:filter_Result_list" />
+                                    </h2>
+                                </div>
+                            </div>
+                            <div id="Filterresultlist" class="row mb-3 ps-2 pe-3 w-100">
+                                <f:form.textarea class="w-100 insight-editor" value="{templates.Filterresultlist}"
+                                    name="templates[Filterresultlist]" />
+                            </div>
+                        </div>
+                        <div class="content-box" id="tplRecommended">
+                            <div class="row mt-3 mb-1 heading">
+                                <div class="col-12 col-md-6">
+                                    <h2>
+                                        <f:translate
+                                            key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:recommended" />
+                                    </h2>
+                                </div>
+                            </div>
+                            <div id="Recommended" class="row mb-3 ps-2 pe-3 w-100">
+                                <f:form.textarea class="w-100 insight-editor" value="{templates.Recommended}"
+                                    name="templates[Recommended]" />
+                            </div>
+                        </div>
+                        <div class="content-box" id="tplCategoryinsights">
+                            <div class="row mt-3 mb-1 heading">
+                                <div class="col-12 col-md-6">
+                                    <h2>
+                                        <f:translate
+                                            key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:category_insights" />
+                                    </h2>
+                                </div>
+                            </div>
+                            <div id="Categoryinsights" class="row mb-3 ps-2 pe-3 w-100">
+                                <f:form.textarea class="w-100 insight-editor" value="{templates.Categoryinsights}"
+                                    name="templates[Categoryinsights]" />
+                            </div>
+                        </div>
+                        <div class="content-box" id="tplQuicksearch">
+                            <div class="row mt-3 mb-1 heading">
+                                <div class="col-12 col-md-6">
+                                    <h2>
+                                        <f:translate
+                                            key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:quicksearch" />
+                                    </h2>
+                                </div>
+                            </div>
+                            <div id="Quicksearch" class="row mb-3 ps-2 pe-3 w-100">
+                                <f:form.textarea class="w-100 insight-editor" value="{templates.Quicksearch}"
+                                    name="templates[Quicksearch]" />
+                            </div>
+                        </div>
+                        <div class="content-box" id="tplInsightelements">
+                            <div class="row mt-3 mb-1 heading">
+                                <div class="col-12 col-md-6">
+                                    <h2>
+                                        <f:translate
+                                            key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:insightelements" />
+                                    </h2>
+                                </div>
+                            </div>
+                            <div id="Insightelements" class="row mb-3 ps-2 pe-3 w-100">
+                                <f:form.textarea class="w-100 insight-editor" value="{templates.Insightelements}"
+                                    name="templates[Insightelements]" />
+                            </div>
+                        </div>
+                        <div class="content-box" id="tplSearchpopular">
+                            <div class="row mt-3 mb-1 heading">
+                                <div class="col-12 col-md-6">
+                                    <h2>
+                                        <f:translate
+                                            key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:searchpopular" />
+                                    </h2>
+                                </div>
+                            </div>
+                            <div id="Searchpopular" class="row mb-3 ps-2 pe-3 w-100">
+                                <f:form.textarea class="w-100 insight-editor" value="{templates.Searchpopular}"
+                                    name="templates[Searchpopular]" />
+                            </div>
+                        </div>
+                        <div class="content-box" id="tplBreadcrumbs">
+                            <div class="row mt-3 mb-1 heading">
+                                <div class="col-12 col-md-6">
+                                    <h2>
+                                        <f:translate
+                                            key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:breadcrumbs" />
+                                    </h2>
+                                </div>
+                            </div>
+                            <div id="Breadcrumbs" class="row mb-3 ps-2 pe-3 w-100">
+                                <f:form.textarea class="w-100 insight-editor" value="{templates.Breadcrumbs}"
+                                    name="templates[Breadcrumbs]" />
+                            </div>
+                        </div>
+
+                        <div class="text-end templateSaveButton">
+                            <button class="btn btn-secondary" type="submit">
+                                <f:image src="EXT:insights/Resources/Public/Icons/saveicon.png" width="17px"
+                                    height="17px" />
+                                <f:translate key="LLL:EXT:insights/Resources/Private/Language/locallang.xlf:save" />
+                            </button>
+                        </div>
+                    </f:form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</f:section>
+
+</html>

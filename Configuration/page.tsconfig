@@ -1,0 +1,96 @@
+mod.wizards.newContentElement.wizardItems.insights { 
+    header = LLL:EXT:insights/Resources/Private/Language/locallang.xlf:insights_tab_title
+    after = common
+    elements { 
+        insights_postlist {
+            iconIdentifier = insights
+            title = LLL:EXT:insights/Resources/Private/Language/locallang.xlf:postlist_title
+            description = LLL:EXT:insights/Resources/Private/Language/locallang.xlf:postlist_desc
+            tt_content_defValues {
+                CType = insights_postlist 
+            }
+        } 
+        insights_recommended {
+            iconIdentifier = insights
+            title = LLL:EXT:insights/Resources/Private/Language/locallang.xlf:recommended_title
+            description = LLL:EXT:insights/Resources/Private/Language/locallang.xlf:recommended_desc
+            tt_content_defValues {
+                CType = insights_recommended 
+            }
+        } 
+        insights_quicksearch {
+            iconIdentifier = insights
+            title = LLL:EXT:insights/Resources/Private/Language/locallang.xlf:quicksearch_title
+            description = LLL:EXT:insights/Resources/Private/Language/locallang.xlf:quicksearch_desc
+            tt_content_defValues {
+                CType = insights_quicksearch 
+            }
+        } 
+        insights_insightelements {
+            iconIdentifier = insights
+            title = LLL:EXT:insights/Resources/Private/Language/locallang.xlf:insightelements_title
+            description = LLL:EXT:insights/Resources/Private/Language/locallang.xlf:insightelements_desc
+            tt_content_defValues {
+                CType = insights_insightelements 
+            }
+        } 
+        insights_tags {
+            iconIdentifier = insights
+            title = LLL:EXT:insights/Resources/Private/Language/locallang.xlf:tags_title
+            description = LLL:EXT:insights/Resources/Private/Language/locallang.xlf:tags_desc
+            tt_content_defValues {
+                CType = insights_tags 
+            }
+        } 
+        insights_postdetail {
+            iconIdentifier = insights
+            title = LLL:EXT:insights/Resources/Private/Language/locallang.xlf:postdetail_title
+            description = LLL:EXT:insights/Resources/Private/Language/locallang.xlf:postdetail_desc
+            tt_content_defValues {
+                CType = insights_postdetail 
+            }
+        } 
+         insights_breadcrumbs {
+            iconIdentifier = insights
+            title = LLL:EXT:insights/Resources/Private/Language/locallang.xlf:breadcrumbs_title
+            description = LLL:EXT:insights/Resources/Private/Language/locallang.xlf:breadcrumbs_desc
+            tt_content_defValues {
+                CType = insights_breadcrumbs 
+            }
+        } 
+        insights_postfilter {
+            iconIdentifier = insights
+            title = LLL:EXT:insights/Resources/Private/Language/locallang.xlf:postfilter_title
+            description = LLL:EXT:insights/Resources/Private/Language/locallang.xlf:postfilter_desc
+            tt_content_defValues {
+                CType = insights_postfilter 
+            }
+        } 
+        insights_filterresultlist {
+            iconIdentifier = insights
+            title = LLL:EXT:insights/Resources/Private/Language/locallang.xlf:filterresultlist_title
+            description = LLL:EXT:insights/Resources/Private/Language/locallang.xlf:filterresultlist_desc
+            tt_content_defValues {
+                CType = insights_filterresultlist 
+            }
+        } 
+        insights_categoryinsights {
+            iconIdentifier = insights
+            title = LLL:EXT:insights/Resources/Private/Language/locallang.xlf:categoryinsights_title
+            description = LLL:EXT:insights/Resources/Private/Language/locallang.xlf:categoryinsights_desc
+            tt_content_defValues {
+                CType = insights_categoryinsights 
+            }
+        } 
+        insights_searchpopular {
+            iconIdentifier = insights
+            title = LLL:EXT:insights/Resources/Private/Language/locallang.xlf:searchpopular_title
+            description = LLL:EXT:insights/Resources/Private/Language/locallang.xlf:searchpopular_desc
+            tt_content_defValues {
+                CType = insights_searchpopular 
+            }
+        } 
+    }
+    show := addToList(insights_postlist,insights_tags,insights_postdetail,insights_postfilter,insights_filterresultlist,insights_categoryinsights)
+}
+      

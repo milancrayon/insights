@@ -1,0 +1,69 @@
+<div class="container-fixed post_filter">
+    <div class="d-flex justify-content-center py-3 ">
+        <button class="button_filter px-5" type="button" data-bs-toggle="offcanvas" data-bs-target="#filterSidebar"
+            aria-controls="filterSidebar">
+            <i class="ki-duotone ki-setting-4"></i> Filter
+        </button>
+    </div>
+
+    <div class="offcanvas offcanvas-start" tabindex="-1" id="filterSidebar" aria-labelledby="filterSidebarLabel">
+        <div class="offcanvas-header border-bottom">
+            <h5 id="filterSidebarLabel" class="p-0 m-0 fw-bold">Filter</h5>
+            <button type="button" class="btn-close btn-sm" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+            <f:form action="postfilterSubmit" enctype="multipart/form-data" name="postfilter" object="{post}"
+                id="filterForm">
+                <div class="d-flex flex-column justify-content-between align-items-center">
+
+                    <div class="top w-100">
+                        <div class="form-group mb-4">
+                            <label class="fw-bold mb-1" for="search">
+                                <f:translate key="post_search" />
+                            </label>
+                            <f:form.textfield property="search" class="form-control comment-input"
+                                value="{search_res}" />
+                        </div>
+
+                        <div class="form-group mb-4">
+                            <label class="fw-bold mb-1" for="tags">
+                                <f:translate key="post_tags" />
+                            </label>
+                            <f:form.select property="tags" class="form-control" options="{tags}" value="{tags_res}" />
+                        </div>
+                    </div>
+
+                    <div class="bottom w-100 my-3 ">
+                        <f:if condition="{categories}">
+                            <div class="form-group mb-4 w-100">
+                                <label class="fw-bold" for="category">
+                                    <f:translate key="post_category" />
+                                </label>
+                                <f:for each="{categories}" as="cat" iteration="ii">
+                                    <div class="pb-3 pt-2 scrollbar-container">
+                                        <f:form.radio property="category" value="{cat.uid}"
+                                            checked="{category_res} == {cat.uid}" class="cursor-pointer" />
+                                        <span class="fs-6">{cat.title}</span>
+                                        <f:if condition="{cat.childs}">
+                                            <f:render partial="childs"
+                                                arguments="{data: cat.childs,property:'category',res:category_res}" />
+                                        </f:if>
+                                    </div>
+                                </f:for>
+                            </div>
+                        </f:if>
+                    </div>
+
+                    <div class="w-100 text-center mt-3 position-absolute bottom-0 p-3 d-flex flex-row gap-2 bg-white">
+                        <f:form.hidden name="filterResultPid" value="{settings.filterResultPid}" />
+                        <button type="button" id="resetFilter" class="button_apply_filter w-50">
+                            <f:translate key="reset" />
+                        </button>
+
+                        <f:form.submit class="button_apply_filter w-50" value="<f:translate key='filter' />" />
+                    </div>
+                </div>
+            </f:form>
+        </div>
+    </div>
+</div>

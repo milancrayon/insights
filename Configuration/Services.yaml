@@ -1,0 +1,17 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: false
+
+    T3element\Insights\:
+        resource: '../Classes/*'
+        exclude: '../Classes/Domain/Model/*'
+
+    T3element\Insights\FormEngine\FieldControl\AiAssistantControl:
+        tags:
+            - name: formEngine.fieldControl
+              identifier: aiAssistant
+
+    T3element\Insights\Controller\AiController:
+        public: true

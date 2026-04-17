@@ -1,0 +1,48 @@
+<div class="container comment-wrapper">
+    <f:form action="commentformSubmit" enctype="multipart/form-data" name="commentform" object="{comments}"
+        pluginName="postdetail" pageUid="{settings.detailPid}" class="comment-form">
+        <h3 class="comment-title mb-4">Write a Comment</h3>
+
+        <div class="form-row">
+            <div class="form-group half">
+                <label class="" for="name">
+                    <f:translate key="comments_name" />
+                </label>
+                <f:form.textfield property="name" class="form-control comment-input" placeholder="" required="true" />
+            </div>
+            <div class="form-group half">
+                <label class="" for="email">
+                    <f:translate key="comments_email" />
+                </label>
+                <f:form.textfield property="email" class="form-control comment-input" placeholder="" required="true"
+                    type="email" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="" for="comment">
+                <f:translate key="comments_comment" />
+            </label>
+            <f:form.textarea property="comment" class="form-control comment-textarea mb-4" placeholder="" required="true" />
+        </div>
+
+        <f:if condition="{postid}">
+            <f:then>
+                <f:form.hidden property="post" value="{postid}" />
+            </f:then>
+            <f:else>
+                <f:form.hidden property="post" value="{item.uid}" />
+            </f:else>
+        </f:if>
+        <f:if condition="{settings.storePid}">
+            <f:then>
+                <f:form.hidden property="storePid" value="{settings.storePid}" />
+            </f:then>
+            <f:else>
+                <f:form.hidden property="storePid" value="{item.pid}" />
+            </f:else>
+        </f:if>
+        <f:form.hidden property="thankPid" value="{settings.thankPid}" />
+        <f:form.submit class="comment-submit" value="<f:translate key='submit' />" />
+    </f:form>
+</div>

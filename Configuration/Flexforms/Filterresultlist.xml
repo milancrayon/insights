@@ -1,0 +1,90 @@
+<T3DataStructure>
+    <sheets>
+        <sDEF>
+            <ROOT>
+                <sheetTitle> General </sheetTitle>
+                <type>array</type>
+                <el>
+                    <settings.storePid> 
+                        <label>LLL:EXT:insights/Resources/Private/Language/locallang.xlf:storePid</label>
+                        <config>
+                            <type>group</type>
+                            <allowed>pages</allowed>
+                            <size>1</size>
+                            <required>1</required>
+                            <maxitems>1</maxitems>
+                            <minitems>1</minitems>
+                        </config> 
+                    </settings.storePid>
+            <settings.pageSize> 
+                <label>LLL:EXT:insights/Resources/Private/Language/locallang.xlf:pageSize</label>
+                <config>
+                    <type>number</type>
+                    <required>1</required>
+                </config> 
+            </settings.pageSize>
+                    <settings.detailPid> 
+                        <label>LLL:EXT:insights/Resources/Private/Language/locallang.xlf:detailPid</label>
+                        <config>
+                            <type>group</type>
+                            <allowed>pages</allowed>
+                            <required>1</required>
+                            <size>1</size>
+                            <maxitems>1</maxitems>
+                            <minitems>1</minitems>
+                        </config> 
+                    </settings.detailPid>
+                    <settings.orderBy> 
+                        <label>LLL:EXT:insights/Resources/Private/Language/locallang.xlf:orderBy</label>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectSingle</renderType>
+                            <items> 
+                                <numIndex index="0">
+                                    <label>LLL:EXT:insights/Resources/Private/Language/locallang.xlf:created</label>
+                                    <value>crdate</value>
+                                </numIndex> 
+                                <numIndex index="1">
+                                    <label>LLL:EXT:insights/Resources/Private/Language/locallang.xlf:modify</label>
+                                    <value>tstamp</value>
+                                </numIndex> 
+                                <numIndex index="2">
+                                    <label>LLL:EXT:insights/Resources/Private/Language/locallang.xlf:post_title</label>
+                                    <value>title</value>
+                                </numIndex> 
+                                <numIndex index="3">
+                                    <label>LLL:EXT:insights/Resources/Private/Language/locallang.xlf:post_publishdate</label>
+                                    <value>publishdate</value>
+                                </numIndex> 
+                                <numIndex index="4">
+                                    <label>LLL:EXT:insights/Resources/Private/Language/locallang.xlf:post_archivedate</label>
+                                    <value>archivedate</value>
+                                </numIndex>
+                            </items>
+                        </config> 
+                    </settings.orderBy>
+            
+                    <settings.orderDir> 
+                        <label>LLL:EXT:insights/Resources/Private/Language/locallang.xlf:orderDir</label>
+                        <config>
+                            <type>select</type>
+                            <required>1</required>
+                            <renderType>selectSingle</renderType>
+                            <items>
+                                <numIndex index="0">
+                                    <label>LLL:EXT:insights/Resources/Private/Language/locallang.xlf:desc</label>
+                                    <value>desc</value>
+                                </numIndex>
+                                <numIndex index="1">
+                                    <label>LLL:EXT:insights/Resources/Private/Language/locallang.xlf:asc</label>
+                                    <value>asc</value>
+                                </numIndex>
+                            </items>
+                        </config> 
+                    </settings.orderDir>
+                
+                </el>
+            </ROOT>
+        </sDEF>
+    </sheets>
+</T3DataStructure>

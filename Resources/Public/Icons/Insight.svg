@@ -1,0 +1,28 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#64B5F6"/>
+      <stop offset="100%" stop-color="#1976D2"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect x="16" y="16" width="480" height="480" rx="96" fill="url(#bgGradient)"/>
+
+  <!-- Back Document -->
+  <rect x="168" y="148" width="208" height="244" rx="24" fill="white" opacity="0.25"/>
+
+  <!-- Middle Document -->
+  <rect x="152" y="132" width="208" height="260" rx="24" fill="white" opacity="0.5"/>
+
+  <!-- Front Document -->
+  <rect x="136" y="116" width="208" height="280" rx="28" fill="white"/>
+
+  <!-- Index Tab -->
+  <rect x="312" y="156" width="48" height="88" rx="16" fill="#1976D2"/>
+
+  <!-- Content Lines -->
+  <rect x="164" y="176" width="120" height="16" rx="8" fill="#1976D2"/>
+  <rect x="164" y="208" width="160" height="16" rx="8" fill="#1976D2"/>
+  <rect x="164" y="240" width="140" height="16" rx="8" fill="#1976D2"/>
+</svg>

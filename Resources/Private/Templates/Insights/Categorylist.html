@@ -1,0 +1,33 @@
+<section class="recommended_topic_area category_list_area"
+    style="background: white !important;background-image: none;background-color: white !important;">
+    <div class="recommended_topic_inner"
+        style="background: white !important;background-image: none;background-color: white !important;">
+
+        <f:if condition="{categories}">
+            <f:then>
+                <div class="container">
+                    <div class="row">
+                        <f:for each="{categories}" as="category">
+                            <div class="col-lg-4 col-6">
+                                <div class="recommended_item wow animate__fadeInUp">
+                                    <div class="category_icon_wrapper mb-3">
+                                        <img src="{f:uri.resource(path: 'Images/folder-open.png', extensionName: 'insights')}"
+                                            class="folder_icon" alt="folder" style="width: 50px; height: auto;">
+                                    </div>
+                                    <f:link.action action="categoryinsights" controller="Insights"
+                                        extensionName="Insights" pluginName="Categoryinsights"
+                                        arguments="{category: category}" pageUid="{settings.listPid}">
+                                        <h3>{category.title}</h3>
+                                    </f:link.action>
+                                </div>
+                            </div>
+                        </f:for>
+                    </div>
+                </div>
+            </f:then>
+            <f:else>
+                <p class="card-text text-center">No Categories Found!!</p>
+            </f:else>
+        </f:if>
+    </div>
+</section>

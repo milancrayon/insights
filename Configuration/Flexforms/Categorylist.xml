@@ -1,0 +1,43 @@
+<T3DataStructure>
+    <sheets>
+        <sDEF>
+            <ROOT>
+                <sheetTitle>General Settings</sheetTitle>
+                <type>array</type>
+                <el>
+                    <settings.categories>
+                        <label>Select Categories</label>
+                        <config>
+                            <type>select</type>
+                            <renderType>selectTree</renderType>
+                            <foreign_table>sys_category</foreign_table>
+                            <foreign_table_where>AND sys_category.sys_language_uid IN (-1, 0) ORDER
+                                BY sys_category.title ASC</foreign_table_where>
+                            <treeConfig>
+                                <parentField>parent</parentField>
+                                <appearance>
+                                    <expandAll>true</expandAll>
+                                    <showHeader>true</showHeader>
+                                </appearance>
+                            </treeConfig>
+                            <size>10</size>
+                            <minitems>1</minitems>
+                            <maxitems>99</maxitems>
+                        </config>
+                    </settings.categories>
+                    <settings.listPid>
+                        <label>LLL:EXT:insights/Resources/Private/Language/locallang.xlf:detailPid</label>
+                        <config>
+                            <type>group</type>
+                            <allowed>pages</allowed>
+                            <required>1</required>
+                            <size>1</size>
+                            <maxitems>1</maxitems>
+                            <minitems>1</minitems>
+                        </config>
+                    </settings.listPid>
+                </el>
+            </ROOT>
+        </sDEF>
+    </sheets>
+</T3DataStructure>

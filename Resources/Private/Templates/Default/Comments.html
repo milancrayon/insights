@@ -1,0 +1,49 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+    xmlns:core="http://typo3.org/ns/TYPO3/CMS/Core/ViewHelpers"
+    xmlns:be="http://typo3.org/ns/TYPO3/CMS/Backend/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:asset.css identifier="interFont">
+    https://fonts.googleapis.com/css?family=Inter:300,400,500,600,700
+</f:asset.css>
+<f:layout name="Default" />
+<f:section name="content">
+    <div class="container-fixed ">
+        <h1 class="p-2 rounded-4 heading mt-4 pb-0">Comments</h1>
+    </div>
+    <div class="container-fixed my-3 rounded insight_table">
+        <div class="table-responsive my-3 shadow-sm border border-1 rounded-4 bg-white">
+
+            <!-- filter collumns  -->
+            <div class="filters comments-filters">
+                <div
+                    class="d-flex flex-column flex-md-row justify-content-center justify-content-md-between flex-wrap gap-2 align-items-center">
+                    <input type="date" id="comment-filter-date" class="date-input form-control w-auto" />
+
+                    <select id="comment-filter-post" class="filter-control form-select w-auto">
+                        <option value="">All Posts</option>
+                        <f:for each="{posts}" as="pst">
+                            <option value="{pst.uid}">{pst.title}</option>
+                        </f:for>
+                    </select>
+                </div>
+            </div>
+
+            <!-- table  -->
+            <table id="be_table_commentlist"
+                class="table table-bordered align-middle custom-table dataTable dtr-inline">
+                <thead class="table-light">
+                    <tr>
+                        <th>Date</th>
+                        <th>Name</th>
+                        <th>Comment</th>
+                        <th>Post</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                        <th>Id</th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+</f:section>
+
+</html>
