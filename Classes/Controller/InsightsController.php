@@ -40,6 +40,7 @@ use TYPO3\CMS\Extbase\Pagination\QueryResultPaginator;
 use TYPO3\CMS\Core\Utility\PathUtility;
 use TYPO3\CMS\Extbase\Persistence\Generic\Typo3QuerySettings;
 use TYPO3\CMS\Backend\Utility\BackendUtility;
+use TYPO3\CMS\Core\Type\ContextualFeedbackSeverity;
 
 /**
  * @extensionScannerIgnoreFile
@@ -575,17 +576,17 @@ class InsightsController extends ActionController
         $site = $this->request->getAttribute('site');
         $router = $site->getRouter();
         $url = "";
-        if ($formData) {
+        if (
+            $formData
+            && trim($formData['name'] ?? '') !== ''
+            && trim($formData['email'] ?? '') !== ''
+            && trim($formData['comment'] ?? '') !== ''
+        ) {
             $_newobj = new Comments();
-            if ($formData['name'] && $formData['name'] != "") {
-                $_newobj->setName($formData['name']);
-            }
-            if ($formData['email'] && $formData['email'] != "") {
-                $_newobj->setEmail($formData['email']);
-            }
-            if ($formData['comment'] && $formData['comment'] != "") {
-                $_newobj->setComment($formData['comment']);
-            }
+            $_newobj->setName($formData['name']);
+            $_newobj->setEmail($formData['email']);
+            $_newobj->setComment($formData['comment']);
+
             if ($formData['post'] && $formData['post'] != "") {
                 if (gettype($formData['post']) == "array") {
                     $_newobj->setPost(implode(",", $formData['post']));
@@ -601,6 +602,7 @@ class InsightsController extends ActionController
             $_newobj->setPid($targetPid);
             $this->commentsRepository->add($_newobj);
             $this->persistenceManager->persistAll();
+            $this->addFlashMessage('Your comment has been submitted and is pending approval.', '', ContextualFeedbackSeverity::OK);
             $uriBuilder = GeneralUtility::makeInstance(UriBuilder::class);
             $uriBuilder->setRequest($this->request);
             if (isset($formData['thankPid']) && $formData['thankPid'] != "") {
@@ -620,10 +622,25 @@ class InsightsController extends ActionController
             }
             return $this->redirectToUri($url);
         }
-        // $uriBuilder = GeneralUtility::makeInstance(UriBuilder::class);
-        // $uriBuilder->setRequest($this->request);
-        // $uriBuilder->reset()->setTargetPageUid($pageUid);
-        // $url = $uriBuilder->build();
+
+        if (isset($formData['post']) && $formData['post'] != "") {
+            $url = (string) $router->generateUri(
+                (int) ($site->getSettings()->get('insightsDetailPid') ?? 0),
+                [
+                    'tx_insights_postdetail' => [
+                        'action' => 'postdetail',
+                        'controller' => 'Insights',
+                        'item' => (int) $formData['post'],
+                        'category' => $this->postRepository->findByUid((int) $formData['post'])?->getPrimaryCategory()?->getUid() ?? 0
+                    ]
+                ]
+            );
+        } else {
+            $uriBuilder = GeneralUtility::makeInstance(UriBuilder::class);
+            $uriBuilder->setRequest($this->request);
+            $url = $uriBuilder->reset()->setTargetPageUid($pageUid)->build();
+        }
+        $this->addFlashMessage('Please fill in all required fields (Name, Email, Comment).', '', ContextualFeedbackSeverity::ERROR);
         return $this->redirectToUri($url);
     }
 
@@ -632,20 +649,22 @@ class InsightsController extends ActionController
         $settings = $this->settings;
         $this->view->assign('settings', $settings);
         $arguments = $this->request->getQueryParams();
-        $this->categoryRepository->setStorage((int) $settings['storePid']);
+        if (isset($settings['storePid'])) {
+            $this->categoryRepository->setStorage((int) $settings['storePid']);
+        }
         $categories = $this->categoryRepository->getCategoryTree();
         $this->view->assign('categories', $categories);
-        if ($arguments['category']) {
+        if (isset($arguments['category']) && $arguments['category'] != "") {
             $this->view->assign('category_res', $arguments['category']);
         } else {
             $this->view->assign('category_res', '');
         }
-        if ($arguments['tags']) {
+        if (isset($arguments['tags']) && $arguments['tags'] != "") {
             $this->view->assign('tags_res', $arguments['tags']);
         } else {
             $this->view->assign('tags_res', '');
         }
-        if ($arguments['search']) {
+        if (isset($arguments['search']) && $arguments['search'] != "") {
             $this->view->assign('search_res', $arguments['search']);
         } else {
             $this->view->assign('search_res', '');
@@ -1302,7 +1321,11 @@ class InsightsController extends ActionController
         $settings = $this->settings;
         $this->view->assign('settings', $settings);
         $_params = $this->request->getQueryParams();
-        $uid = $_params['tx_insights_postdetail']['item'];
+        if (isset($_params['tx_insights_postdetail']['item']) && $_params['tx_insights_postdetail']['item'] != "") {
+            $uid = $_params['tx_insights_postdetail']['item'];
+        } else {
+            $uid = 0;
+        }
         if ($uid != "") {
             $item = null;
             $item = $this->postRepository->findByUid((int) $uid);

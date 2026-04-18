@@ -427,14 +427,12 @@ $(document).ready(function () {
         $("#eazydocs_share").fadeOut();
     });
 
-
-
     // size increase descrease of text
     var step = 1;
     var minSize = 10;
     var maxSize = 60;
 
-    var $elements = $('.post_detail').find('*');
+    var $elements = $('.post_detail').find('*').not('#font-switcher, #font-switcher *');
 
     $elements.each(function () {
         var originalSize = $(this).css('font-size');
@@ -490,6 +488,4 @@ $(document).ready(function () {
         e.preventDefault();
         window.print();
     });
-
 });
-
